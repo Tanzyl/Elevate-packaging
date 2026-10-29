@@ -1,0 +1,21 @@
+# Elevate
+
+> Elevate is an American maker of flexible packaging. Its range covers custom printed pouches (stand-up, four-side seal, flat-bottom, spout, and retort), laminated and metallized films, holographic films, and roll stock for form-fill-seal lines, all printed by rotogravure or flexo in as many as 8 colors.
+
+## Products
+
+- [All products](https://www.elevatepackaging.com/products): the complete catalog, grouped by product line
+- [Pouches](https://www.elevatepackaging.com/products/pouches): stand-up, four-side seal, flat-bottom, spout/nozzle, shaped die-cut, and kraft paper styles
+- [Printed Films](https://www.elevatepackaging.com/products/printed-films): film printed by rotogravure or flexography
+- [Plastic Films](https://www.elevatepackaging.com/products/plastic-films): extruded, metallized, and holographic films
+
+## Industries
+
+- [Markets served](https://www.elevatepackaging.com/industries): 25 markets such as rice, tea and coffee, snacks and candy, frozen food, pet food, cosmetics, detergent, textiles, and courier bags, each with its own page at /industries/<slug>
+
+## Company
+
+- [About](https://www.elevatepackaging.com/about): who we are, plus our vision and mission
+- [Innovations](https://www.elevatepackaging.com/innovations): how we handle extrusion, printing, lamination, slitting, bag making, and metallized film
+- [Contact](https://www.elevatepackaging.com/contact): our main office in the USA
+- [Get a Quote](https://www.elevatepackaging.com/rfq)

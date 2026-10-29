@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-02T00:00:00Z",
+  "title": "Design System: Elevate",
+  "extensions": {
+    "colorMeta": {
+      "evergreen": { "role": "primary", "displayName": "Evergreen", "canonical": "#1f5f47", "tonalRamp": ["#070e22", "#0d1a40", "#132457", "#1a4c3a", "#1f5f47", "#2e58ae", "#4b74c0", "#a5b9e0"] },
+      "evergreen-deep": { "role": "primary", "displayName": "Evergreen Deep", "canonical": "#1a4c3a", "tonalRamp": ["#070e22", "#0d1a40", "#132457", "#1a4c3a", "#1f5f47", "#2e58ae", "#7896d0", "#d2dcf0"] },
+      "copper": { "role": "secondary", "displayName": "Copper", "canonical": "#c56b36", "tonalRamp": ["#3d0a0d", "#6b1118", "#991822", "#c11d2a", "#c56b36", "#e94b57", "#f18d94", "#f9d0d3"] },
+      "foil-gold": { "role": "secondary", "displayName": "Foil Gold", "canonical": "#d4a73d", "tonalRamp": ["#301e0c", "#553a1f", "#7f561c", "#9f6f1f", "#c08e28", "#d4a73d", "#dfbe64", "#f4ecce"] },
+      "press-cyan": { "role": "tertiary", "displayName": "Press Cyan", "canonical": "#2b8bd6", "tonalRamp": ["#0a2436", "#134663", "#1c6698", "#2b8bd6", "#4fa0dd", "#7db8e7", "#abd0f0", "#d9e8f8"] },
+      "press-magenta": { "role": "tertiary", "displayName": "Press Magenta", "canonical": "#d6336c", "tonalRamp": ["#380c1c", "#621634", "#8f204c", "#bc2a60", "#d6336c", "#e05c8a", "#eb93b3", "#f7d0de"] },
+      "press-yellow": { "role": "tertiary", "displayName": "Press Yellow", "canonical": "#f4b942", "tonalRamp": ["#3f2d08", "#6f5111", "#9f741a", "#cf9723", "#f4b942", "#f6c667", "#f9d894", "#fcedcc"] },
+      "press-green": { "role": "tertiary", "displayName": "Press Green", "canonical": "#2dba7a", "tonalRamp": ["#0a2b1c", "#125234", "#1b7a4d", "#24a166", "#2dba7a", "#57c893", "#8fd9b6", "#cbeeda"] },
+      "film-white": { "role": "neutral", "displayName": "Film White", "canonical": "#ffffff", "tonalRamp": ["#0f172a", "#334155", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f4f7fc", "#ffffff"] },
+      "section-tint": { "role": "neutral", "displayName": "Section Tint", "canonical": "#f4f7fc", "tonalRamp": ["#0f172a", "#334155", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f4f7fc", "#ffffff"] },
+      "ink-slate": { "role": "neutral", "displayName": "Ink Slate", "canonical": "#0f172a", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#f1f5f9"] },
+      "muted-slate": { "role": "neutral", "displayName": "Muted Slate", "canonical": "#475569", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#f1f5f9"] },
+      "subtle-slate": { "role": "neutral", "displayName": "Subtle Slate", "canonical": "#94a3b8", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#f1f5f9"] },
+      "hairline-slate": { "role": "neutral", "displayName": "Hairline Slate (used at 8-15% alpha)", "canonical": "#64748b", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#f1f5f9"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Plus Jakarta Sans)", "purpose": "All h1-h4 via font-display, tracking-tight. Sizes are fluid via the root font-size clamp." },
+      "body": { "displayName": "Body (DM Sans)", "purpose": "Paragraphs, spec tables, product attributes. ss01/cv11 features on." },
+      "label": { "displayName": "Eyebrow Label", "purpose": "Section kickers: uppercase, 0.35em tracking, Evergreen." }
+    },
+    "shadows": [
+      { "name": "shadow-accent", "value": "0 4px 24px -6px rgba(30, 60, 139, 0.28)", "purpose": "Primary CTA emphasis glow." },
+      { "name": "shadow-gold", "value": "0 4px 24px -6px rgba(212, 167, 61, 0.35)", "purpose": "Rare premium/metallic emphasis." },
+      { "name": "card-hover-lift", "value": "0 14px 40px -14px rgba(30, 60, 139, 0.35)", "purpose": "Interactive card hover, paired with -0.5px translateY." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default reveal easing (motion/tokens.ts ease.out)." },
+      { "name": "ease-out-soft", "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Softer secondary reveals." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Symmetric transitions." },
+      { "name": "dur-xs..xl", "value": "0.2s / 0.35s / 0.55s / 0.8s / 1.1s", "purpose": "Shared duration scale (motion/tokens.ts dur)." },
+      { "name": "marquee", "value": "40s linear infinite, transform-only translate3d(-50%)", "purpose": "Logo strips; capabilities track runs 55s, pauses on hover." },
+      { "name": "ken-burns", "value": "28s ease-in-out infinite scale(1..1.035)", "purpose": "Hero backdrop drift." },
+      { "name": "foil-shine", "value": "11s ease-in-out infinite skewed sweep", "purpose": "Metallic film highlight over hero imagery." }
+    ],
+    "breakpoints": [
+      { "name": "nav", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill CTA in Evergreen with accent glow; arrow nudges on hover.",
+      "html": "<a class=\"ds-btn-primary\">Request a Quote <span class=\"ds-btn-arrow\">→</span></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #1f5f47; color: #ffffff; padding: 14px 24px; border-radius: 9999px; font-family: DM Sans, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; box-shadow: 0 4px 24px -6px rgba(30,60,139,0.28); transition: background-color 0.2s; } .ds-btn-primary:hover { background: #1a4c3a; } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(30,60,139,0.6); } .ds-btn-arrow { transition: transform 0.3s; } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(2px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline pill; border and text turn Evergreen on hover.",
+      "html": "<a class=\"ds-btn-ghost\">Explore Products</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #0f172a; padding: 14px 24px; border: 1px solid rgba(100,116,139,0.15); border-radius: 9999px; font-family: DM Sans, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: border-color 0.2s, color 0.2s; } .ds-btn-ghost:hover { border-color: #1f5f47; color: #1f5f47; } .ds-btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(30,60,139,0.6); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Hairline-bordered soft rectangle with corner registration brackets; lifts with a tinted glow on hover.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card-corner ds-tl\"></span><span class=\"ds-card-corner ds-tr\"></span><span class=\"ds-card-corner ds-bl\"></span><span class=\"ds-card-corner ds-br\"></span><h3 class=\"ds-card-title\">Hi Speed Extrusion</h3><p class=\"ds-card-body\">Multi-layered films of the highest quality, durability and strength.</p></div>",
+      "css": ".ds-card { position: relative; background: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.15), transparent); border: 1px solid rgba(100,116,139,0.08); border-radius: 12px; padding: 24px; transition: all 0.3s; max-width: 320px; } .ds-card:hover { transform: translateY(-2px); border-color: rgba(30,60,139,0.3); box-shadow: 0 14px 40px -14px rgba(30,60,139,0.35); } .ds-card-title { font-family: Plus Jakarta Sans, Georgia, serif; letter-spacing: -0.025em; color: #0f172a; font-size: 1.125rem; margin: 0 0 8px; } .ds-card-body { font-family: DM Sans, system-ui, sans-serif; color: #475569; font-size: 0.875rem; line-height: 1.6; margin: 0; } .ds-card-corner { position: absolute; width: 12px; height: 12px; border-color: rgba(30,60,139,0.4); border-style: solid; border-width: 0; opacity: 0.6; } .ds-card-corner.ds-tl { left: 8px; top: 8px; border-left-width: 1px; border-top-width: 1px; } .ds-card-corner.ds-tr { right: 8px; top: 8px; border-right-width: 1px; border-top-width: 1px; } .ds-card-corner.ds-bl { left: 8px; bottom: 8px; border-left-width: 1px; border-bottom-width: 1px; } .ds-card-corner.ds-br { right: 8px; bottom: 8px; border-right-width: 1px; border-bottom-width: 1px; }"
+    },
+    {
+      "name": "Underline Input",
+      "kind": "input",
+      "refersTo": "input-underline",
+      "description": "Boxless underline field; hairline turns Evergreen on focus.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Email</span><input class=\"ds-field-input\" type=\"email\" placeholder=\"you@company.com\"></label>",
+      "css": ".ds-field { display: block; border-bottom: 1px solid rgba(100,116,139,0.15); padding: 12px 0; transition: border-color 0.2s; max-width: 320px; } .ds-field:focus-within { border-color: #1f5f47; } .ds-field-label { display: block; font-family: DM Sans, system-ui, sans-serif; font-size: 0.75rem; color: #475569; margin-bottom: 4px; } .ds-field-input { width: 100%; border: none; background: transparent; font-family: DM Sans, system-ui, sans-serif; font-size: 1rem; color: #0f172a; outline: none; } .ds-field-input::placeholder { color: #94a3b8; }"
+    },
+    {
+      "name": "Eyebrow Label",
+      "kind": "chip",
+      "refersTo": "eyebrow-label",
+      "description": "Section kicker: uppercase, wide-tracked, Evergreen.",
+      "html": "<p class=\"ds-eyebrow\">Flexible Packaging</p>",
+      "css": ".ds-eyebrow { font-family: DM Sans, system-ui, sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.35em; color: #1f5f47; margin: 0; }"
+    },
+    {
+      "name": "Nav Link (active)",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header link with the 2px Evergreen underline capsule marking the current section.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-active\">Products<span class=\"ds-nav-underline\"></span></a><a class=\"ds-nav-link\">Industries</a><a class=\"ds-nav-link\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 24px; font-family: DM Sans, system-ui, sans-serif; font-size: 0.875rem; } .ds-nav-link { position: relative; color: #0f172a; padding: 8px 4px; cursor: pointer; transition: color 0.2s; } .ds-nav-link:hover { color: #1f5f47; } .ds-nav-link.ds-active { color: #1f5f47; font-weight: 500; } .ds-nav-underline { position: absolute; left: 4px; right: 4px; bottom: 0; height: 2px; border-radius: 9999px; background: #1f5f47; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Evergreen on White Film",
+    "overview": "The site treats the screen like the company's own product: a run of pristine white packaging film, printed in a single royal-blue ink with the logo's CMYK swoosh appearing only as trace registration hints. Everything sits on white or a barely-blue section tint; color is ink, not paint. Metallic and film qualities (foil-shine sweeps, Ken Burns drift, film-flow textures, a 5% grain overlay) supply the material feel of flexible packaging without ever darkening the substrate. Components are refined and restrained: type and real photography carry the page, chrome recedes. Layouts are dense and premium; the client explicitly dislikes blank space.",
+    "keyCharacteristics": [
+      "Locked light/white theme — :root and .dark are identical by design; no dark mode without client approval",
+      "One interactive ink (evergreen); copper and CMYK accents are identity marks, not UI colors",
+      "Fluid everything: no container max-width, viewport-clamped edge padding, root font-size clamp above 1440px",
+      "Motion is ambient and compositor-friendly: transform-only loops, shared easing tokens, prefers-reduced-motion support"
+    ],
+    "rules": [
+      { "name": "The One Ink Rule", "body": "Evergreen is the only color that means \"interactive.\" If an element is blue, it must do something; if it does something, it is blue. CMYK accents never take on interactive meaning.", "section": "colors" },
+      { "name": "The White Substrate Rule", "body": "Backgrounds are Film White or Section Tint only. No dark sections, no flooded brand-color panels. Style with the semantic tokens, never the raw primary/navy scales.", "section": "colors" },
+      { "name": "The Two Faces Rule", "body": "Plus Jakarta Sans and DM Sans are the only typefaces. No third font, no font swap, without client confirmation.", "section": "typography" },
+      { "name": "The Tinted Shadow Rule", "body": "Shadows carry the ink (blue/gold tint), never neutral black at high alpha.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do style with semantic tokens (bg-bg, bg-section, bg-card, text-fg, text-muted, border-line, bg-accent) so values stay swappable.",
+      "Do keep all imagery WebP, named <slug>-NN.webp, and route video embeds through components/ui/lite-video.tsx.",
+      "Do import easing/duration from components/motion/tokens.ts and reuse components/motion/* primitives for reveals.",
+      "Do keep layouts dense — the client reads whitespace as emptiness, not luxury.",
+      "Do keep ambient animation transform-only so it stays on the GPU compositor."
+    ],
+    "donts": [
+      "Don't reintroduce a dark theme, theme toggle, or dark sections — the light lock is a client decision.",
+      "Don't use the raw primary/navy/gold Tailwind scales for new UI; they exist for legacy contrast math only.",
+      "Don't give Copper or the CMYK accents interactive meaning (One Ink Rule).",
+      "Don't add opaque 1px gray borders or neutral black drop shadows; hairlines are alpha'd, shadows are tinted.",
+      "Don't add a third typeface or swap Plus Jakarta Sans/DM Sans without client confirmation.",
+      "Don't drop a JPG/PNG into public/images/ — it undoes the ~300MB→17MB optimization win."
+    ]
+  }
+}

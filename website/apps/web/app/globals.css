@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Semantic tokens (light + dark) ----------
+   Primary accent: #1f5f47 — evergreen.
+   Secondary:      #c56b36 — copper, available via gold-* and print-red.
+   Earthy accent dots available via print-* utilities.
+
+   Follows the OS setting by default; `.dark` (toggled via next-themes) swaps
+   every token, so components need no dark: variants of their own.
+*/
+@layer base {
+  html {
+    position: relative;
+  }
+
+  /* .force-light pins the light tokens on a subtree (the admin panel). */
+  :root,
+  .force-light {
+    --gradient-color: #1f5f47;
+    --sparkles-color: #1f5f47;
+
+    color-scheme: light;
+
+    --bg: 251 249 245;            /* #fbf9f5 — warm paper */
+    --section: 243 239 231;       /* #f3efe7 — sand */
+    --card: 255 255 255;          /* white */
+    --fg: 23 28 25;               /* #171c19 — ink */
+    --muted: 82 90 85;            /* #525a55 */
+    --subtle: 150 155 150;        /* #969b96 */
+    --line: 110 115 105;          /* used with /10, /15 alpha */
+    --accent: 31 95 71;           /* #1f5f47 — evergreen */
+    --accent-hover: 26 76 58;     /* #1a4c3a */
+  }
+
+  .dark {
+    --gradient-color: #3d8f6b;
+    --sparkles-color: #3d8f6b;
+
+    color-scheme: dark;
+
+    --bg: 14 20 17;               /* #0e1411 — deep forest */
+    --section: 20 28 24;          /* #141c18 */
+    --card: 26 36 31;             /* #1a241f */
+    --fg: 236 233 226;            /* #ece9e2 — warm off-white */
+    --muted: 170 180 172;         /* #aab4ac */
+    --subtle: 120 132 124;        /* #78847c */
+    --line: 200 210 202;          /* used with /10, /15 alpha */
+    --accent: 61 143 107;         /* #3d8f6b — evergreen, lifted for dark */
+    --accent-hover: 74 163 124;   /* #4aa37c */
+  }
+
+  /* Fluid type & spacing: the root font-size is clamp()ed to the viewport
+     width, and every Tailwind text/spacing/size utility is rem-based, so all
+     components — hero, cards, sections, body copy — scale continuously with
+     the actual screen size instead of stepping at hardcoded breakpoints.
+     16px up to 1440px-wide screens (phones/tablets/laptops unchanged), then
+     grows ~0.5px per 160px of width, capping at 22px on ultrawides. */
+  @media (min-width: 1440px) {
+    html {
+      font-size: clamp(16px, 0.5vw + 8.8px, 22px);
+    }
+  }
+
+  body {
+    @apply bg-bg text-fg antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Keep in-page scroll targets clear of the fixed header */
+  section, [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    @apply bg-accent/25 text-fg;
+  }
+
+  /* Accessibility — honor OS reduced-motion preference for CSS transitions */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Visible keyboard focus ring on all interactive elements */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/60 ring-offset-2 ring-offset-bg;
+    border-radius: 4px;
+  }
+}
+
+/* ---------- Utilities ---------- */
+@layer utilities {
+  /* Warm paper backdrop with faint evergreen/copper glows */
+  .bg-royal {
+    background:
+      radial-gradient(1100px 620px at 8% -8%, rgba(31, 95, 71, 0.08), transparent 62%),
+      radial-gradient(780px 500px at 102% 4%, rgba(197, 107, 54, 0.07), transparent 62%),
+      radial-gradient(820px 520px at 50% 110%, rgba(58, 143, 168, 0.04), transparent 62%),
+      linear-gradient(180deg, #fbf9f5 0%, #f3efe7 100%);
+  }
+
+  .dark .bg-royal {
+    background:
+      radial-gradient(1100px 620px at 8% -8%, rgba(61, 143, 107, 0.14), transparent 62%),
+      radial-gradient(780px 500px at 102% 4%, rgba(214, 134, 83, 0.10), transparent 62%),
+      linear-gradient(180deg, #0e1411 0%, #141c18 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* ---- Shared "fancy" primitives for page redesigns ---- */
+
+  /* Soft evergreen/copper glow behind a section. */
+  .mesh-bg {
+    background:
+      radial-gradient(900px 420px at 0% 0%, rgb(var(--accent) / 0.10), transparent 60%),
+      radial-gradient(700px 380px at 100% 20%, rgba(197, 107, 54, 0.10), transparent 60%),
+      rgb(var(--bg));
+  }
+
+  /* Evergreen → copper gradient text, for one or two highlighted words. */
+  .text-gradient {
+    background: linear-gradient(100deg, rgb(var(--accent)) 10%, #c56b36 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Frosted panel that works on light, dark and photo backgrounds. */
+  .glass {
+    background: rgb(var(--card) / 0.65);
+    border: 1px solid rgb(var(--line) / 0.12);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+
+  /* Card that lifts and gains an accent glow on hover. */
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s, border-color 0.35s;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    border-color: rgb(var(--accent) / 0.35);
+    box-shadow: 0 18px 40px -18px rgb(var(--accent) / 0.45);
+  }
+
+  /* Dark evergreen band: redefines the semantic tokens, so any section placed
+     inside renders dark without changing its own classes. */
+  .band-dark {
+    --bg: 17 47 38;
+    --section: 17 47 38;
+    --card: 22 61 48;
+    --fg: 245 241 233;
+    --muted: 196 208 199;
+    --subtle: 150 170 158;
+    --line: 220 232 224;
+    --accent: 214 134 83;
+    --accent-hover: 226 167 127;
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+  }
+
+  /* SVG fractal-noise grain overlay — apply to a wrapper with ::after */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 200px 200px;
+  }
+
+  /* Horizontal scroll-snap track — used by Technology row */
+  .snap-x-mand {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .snap-x-mand::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Endless logo marquee — transform-only so it runs on the GPU compositor
+     and never stutters with main-thread work. -50% = exactly one content copy
+     (see components/ui/marquee.tsx for the copy-width math). */
+  @keyframes marquee-x {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+  .animate-marquee {
+    animation: marquee-x 40s linear infinite;
+  }
+
+  /* Hero backdrop animations — slow Ken Burns zoom+pan + foil-shine sweep */
+  @keyframes ken-burns {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.035); }
+    100% { transform: scale(1); }
+  }
+  .animate-ken-burns {
+    animation: ken-burns 28s ease-in-out infinite;
+    /* Zoom anchored just below center to match the hero's object-position:
+       the extra crop splits between empty sky and reflection, never products. */
+    transform-origin: 50% 60%;
+    will-change: transform;
+  }
+
+  @keyframes foil-shine {
+    0%   { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+    25%  { opacity: 0.55; }
+    50%  { opacity: 0.35; }
+    100% { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+  }
+  .animate-foil-shine {
+    animation: foil-shine 11s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+
+  @keyframes film-flow {
+    0%   { background-position: 0 0; }
+    100% { background-position: 400px 0; }
+  }
+  .animate-film-flow {
+    animation: film-flow 18s linear infinite;
+  }
+
+  @keyframes rollers {
+    0%   { transform: translateX(0); opacity: 0.0; }
+    10%  { opacity: 0.8; }
+    90%  { opacity: 0.8; }
+    100% { transform: translateX(-100%); opacity: 0.0; }
+  }
+
+  /* "Our capabilities" slider — slow seamless marquee, pauses on hover */
+  @keyframes capabilities-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: capabilities-marquee 55s linear infinite;
+  }
+  .marquee-viewport:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+}
+
+/* Google Translate widget (components/language-switcher.tsx): the switcher is
+   our own <select>, so hide every piece of Google's injected chrome — the top
+   banner iframe (and the body offset it forces), the hidden element host, and
+   the hover tooltip/highlight it paints on translated text. */
+#google_translate_element,
+.goog-te-banner-frame,
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* When Google Translate is active it stamps `translated-ltr`/`translated-rtl`
+   on <html>. Translated nav labels run longer than the English originals
+   (e.g. "Medios de comunicación"), but the header must stay a single row —
+   logo, nav, and quote button together, same as English. So each nav label
+   may wrap onto a second line inside its own slot (nowrap lifted), with a
+   modest trim to 13px — the row itself never breaks. */
+html.translated-ltr header .container,
+html.translated-rtl header .container {
+  height: auto;
+  min-height: 4rem;
+}
+html.translated-ltr header .container ul > li > a,
+html.translated-ltr header .container ul > li > button,
+html.translated-rtl header .container ul > li > a,
+html.translated-rtl header .container ul > li > button {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 0.8125rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+/* Arabic labels are short but its script is illegible at 13px — RTL gets a
+   full 16px (the labels still fit one row with room to spare). */
+html.translated-rtl header .container ul > li > a,
+html.translated-rtl header .container ul > li > button {
+  font-size: 1rem;
+}
+/* Arabic glyphs read visually smaller than Latin at the same px, so bump
+   every small-text utility one step site-wide while Arabic is active —
+   product cards, innovation cards, menu panels, footer. */
+html.translated-rtl .text-sm {
+  font-size: 0.9375rem;
+}
+html.translated-rtl .text-xs {
+  font-size: 0.8125rem;
+}
+html.translated-rtl .text-lg {
+  font-size: 1.1875rem;
+}

@@ -1,0 +1,160 @@
+// Phase 1 schema. Designed to round-trip the content currently in
+// apps/web/lib/products.ts, lib/site-config.ts, lib/home-content.ts so the
+// admin panel can manage what the public site renders.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         Role     @default(ADMIN)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Innovation {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  summary   String
+  body      String
+  coverUrl  String?
+  videoUrl  String?
+  featured  Boolean  @default(false)
+  order     Int      @default(0)
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ProductCategory {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  name      String
+  summary   String?
+  intro     String?
+  order     Int       @default(0)
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  id           String          @id @default(cuid())
+  slug         String          @unique
+  name         String
+  summary      String
+  description  String[]
+  applications String[]
+  features     String[]
+  finishes     String[]
+  specs        Json            @default("[]")
+  gallery      Json            @default("[]")
+  moq          String?
+  leadTime     String?
+  categoryId   String
+  category     ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  featured     Boolean         @default(false)
+  order        Int             @default(0)
+  published    Boolean         @default(true)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+}
+
+model Market {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  name         String
+  leadCopy     String
+  applications String[]
+  order        Int      @default(0)
+  published    Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Inquiry {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  email     String
+  phone     String
+  address   String?
+  message   String
+  source    String?
+  handled   Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  quote     String
+  author    String
+  role      String
+  order     Int      @default(0)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Certification {
+  id        String   @id @default(cuid())
+  name      String
+  url       String?
+  order     Int      @default(0)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ---- Media page CMS: News / Gallery / Videos ----
+
+model NewsPost {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  excerpt   String
+  body      String?
+  coverUrl  String?
+  date      DateTime @default(now())
+  featured  Boolean  @default(false)
+  order     Int      @default(0)
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  imageUrl  String
+  caption   String?
+  order     Int      @default(0)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Video {
+  id        String   @id @default(cuid())
+  title     String
+  url       String
+  caption   String?
+  order     Int      @default(0)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

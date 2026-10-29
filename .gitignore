@@ -1,0 +1,48 @@
+# --- code-review-graph ---
+.code-review-graph/
+
+# --- derived / temporary artefacts ---
+.extracted_docx/
+
+# --- env files (secrets) ---
+.env.*.local
+
+# --- OS / IDE / misc ---
+.DS_Store
+Thumbs.db
+.idea/
+*.log
+
+# --- build outputs that might leak to root ---
+node_modules/
+dist/
+.next/
+.gstack/
+
+# --- generated knowledge-graph output (graph.html/json/db etc.) ---
+graphify-out/
+
+# --- API runtime uploads (admin-uploaded media; served at runtime, not committed) ---
+/website/apps/api/uploads/
+
+# --- gbrain diagnostics ---
+gbrain_doctor.*
+
+# --- source design assets (working files; NOT part of the deployed site) ---
+# The site consumes optimized copies under website/apps/web/public/images/.
+Product-Images/
+Certificates-logos/
+Client-logos/
+Partners-logos/
+.pnpm-store/
+*.pdf
+*.docx
+~$*
+lpimage.png
+menu-design.png
+
+new-images/
+
+# Raw certification logo sources (PDF/PNG/JPEG); site reads the WebPs under apps/web/public/images/certifications/
+certificates/
+config.bat

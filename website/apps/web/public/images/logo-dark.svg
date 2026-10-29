@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" width="700" height="220" role="img" aria-label="Elevate">
+  <!-- Placeholder wordmark for dark backgrounds: replace with the real logo. -->
+  <path d="M20 170 L110 60 L200 170" fill="none" stroke="#5eb08a" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 200 L110 150 L150 200" fill="none" stroke="#d68653" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="240" y="152" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="700" textLength="440" lengthAdjust="spacingAndGlyphs" fill="#ece9e2">ELEVATE</text>
+</svg>

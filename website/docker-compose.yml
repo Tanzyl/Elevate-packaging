@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: elevatepackaging-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: elevatepackaging
+      POSTGRES_PASSWORD: elevatepackaging_dev
+      POSTGRES_DB: elevatepackaging
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
