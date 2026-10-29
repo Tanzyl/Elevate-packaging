@@ -173,7 +173,7 @@ export function RfqForm() {
         )}
         {status === "error" && (
           <p className="text-sm text-red-500 dark:text-red-300">
-            We couldn&rsquo;t send your request. Please write to info@elevatepackaging.com directly.
+            We couldn&rsquo;t send your request. Please write to hs.enterprises4921@gmail.com directly.
           </p>
         )}
       </form>

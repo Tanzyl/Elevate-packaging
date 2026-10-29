@@ -66,13 +66,12 @@ export function organizationLd() {
     image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
     description:
       "USA-based manufacturer of flexible packaging: custom printed pouches, laminated films, and rotogravure & flexographic printing.",
-    // TODO: placeholder — replace with the real head-office address.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Industrial Way, Suite 100",
-      addressLocality: "Anytown",
-      addressRegion: "ST",
-      postalCode: "00000",
+      streetAddress: "3898 El Camino Real",
+      addressLocality: "Palo Alto",
+      addressRegion: "CA",
+      postalCode: "94306",
       addressCountry: "US"
     },
     contactPoint: [

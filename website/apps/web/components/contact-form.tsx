@@ -140,7 +140,7 @@ export function ContactForm() {
       )}
       {status === "error" && (
         <p className="mt-5 text-sm text-red-500 dark:text-red-300">
-          We couldn&rsquo;t send that. Please write to info@elevatepackaging.com directly.
+          We couldn&rsquo;t send that. Please write to hs.enterprises4921@gmail.com directly.
         </p>
       )}
     </form>

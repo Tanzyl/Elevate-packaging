@@ -64,7 +64,7 @@ Running an automatic filling line? You can order printed film on the roll, slit 
 
 Your best format depends on the spice, your filling method, and the level of protection you need.
 
-Prefer to see samples first? Call +1 (555) 010-0100 or email info@elevatepackaging.com and let us know what you're packing.
+Prefer to see samples first? Call +1 (415) 985-5597 or email hs.enterprises4921@gmail.com and let us know what you're packing.
 
 ## What material keeps spices fresh?
 
@@ -154,7 +154,7 @@ Picking spice packaging boils down to a handful of straightforward questions. Wh
 
 Price alone shouldn't decide it. Get samples, fill them with your real product, and test the seals and barrier yourself. A pack that looks great in the store but fails in the customer's pantry won't earn a second purchase.
 
-Want a hand? Talk to Elevate about custom flexible packaging for your spice line. Call +1 (555) 010-0100 or email info@elevatepackaging.com.`,
+Want a hand? Talk to Elevate about custom flexible packaging for your spice line. Call +1 (415) 985-5597 or email hs.enterprises4921@gmail.com.`,
     coverUrl: "/images/industries/spices-pulses-packaging-04.webp",
     date: "2026-10-16T00:00:00.000Z",
     featured: false
@@ -250,7 +250,7 @@ Depending on the snack, that might include blocking light, resisting grease, or 
 
 A paper bag can be fine for some dry snacks. If yours needs an oxygen and moisture barrier, you'll need a different structure. Pick a material that protects the product for its full shelf life, not just one that looks good on display.
 
-Not sure which structure fits your snack? Call Elevate at +1 (555) 010-0100 or email info@elevatepackaging.com with details about your product, and we'll go through the options with you.
+Not sure which structure fits your snack? Call Elevate at +1 (415) 985-5597 or email hs.enterprises4921@gmail.com with details about your product, and we'll go through the options with you.
 
 ## Recyclable vs. biodegradable: what's the difference?
 
@@ -333,7 +333,7 @@ The most sustainable pack isn't necessarily the one that looks greenest. It's th
 
 Begin with what the snack needs. Compare materials on fair terms, trial a few, and ask for documentation. If an option compromises freshness, rule it out.
 
-Ready to explore your options? Reach Elevate at +1 (555) 010-0100 or info@elevatepackaging.com, and we'll help you find packaging that suits your product.`,
+Ready to explore your options? Reach Elevate at +1 (415) 985-5597 or hs.enterprises4921@gmail.com, and we'll help you find packaging that suits your product.`,
     coverUrl: "/images/products/kraft-paper-pouch-front.webp",
     date: "2026-10-16T00:00:00.000Z",
     featured: false
@@ -404,7 +404,7 @@ This is where **custom stand-up pouches** really matter, particularly for startu
 * A selection of finishes, such as matte, gloss, or textured
 * Lower **minimum order quantity options** from some manufacturers, though this varies by supplier
 
-Unsure which size, print approach, or MOQ suits your product? [**Elevate**](/) can help you sort it out. Call [**+1 (555) 010-0100**](tel:+15550100100) or email [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com).
+Unsure which size, print approach, or MOQ suits your product? [**Elevate**](/) can help you sort it out. Call [**+1 (415) 985-5597**](tel:+14159855597) or email [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com).
 
 ### 5. They're Light and Practical
 
@@ -466,7 +466,7 @@ In practice, that usually means:
 4. Select printing and finishes that suit your brand, not simply the lowest price
 5. Confirm MOQ and packaging requirements with your supplier before finalizing
 
-[**Elevate**](/) helps tea and coffee brands with exactly these decisions. When you're ready to get started, contact us at [**+1 (555) 010-0100**](tel:+15550100100) or [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com).
+[**Elevate**](/) helps tea and coffee brands with exactly these decisions. When you're ready to get started, contact us at [**+1 (415) 985-5597**](tel:+14159855597) or [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com).
 
 ## Frequently Asked Questions
 
@@ -504,7 +504,7 @@ Many now use recyclable or reduced-material structures, which can make them a gr
 
 ## The Bottom Line
 
-Heat and humidity are unforgiving to weak packaging, and tea and coffee lose freshness quickly once air or moisture gets in. Stand-up pouches answer that with solid barrier protection, while giving brands more space to stand out and a format that's simpler to store and ship. Whether you're an established label or launching a small direct-to-consumer line, the format can scale with you. [**Elevate**](/) can help you choose the right pouch for your product; reach us at [**+1 (555) 010-0100**](tel:+15550100100) or [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com).`,
+Heat and humidity are unforgiving to weak packaging, and tea and coffee lose freshness quickly once air or moisture gets in. Stand-up pouches answer that with solid barrier protection, while giving brands more space to stand out and a format that's simpler to store and ship. Whether you're an established label or launching a small direct-to-consumer line, the format can scale with you. [**Elevate**](/) can help you choose the right pouch for your product; reach us at [**+1 (415) 985-5597**](tel:+14159855597) or [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com).`,
     coverUrl: "/images/hero-lineup.webp",
     date: "2026-09-28T00:00:00.000Z",
     featured: false
@@ -617,7 +617,7 @@ Settle this question early, since it influences nearly every packaging choice th
 | Printing | Functional branding | High-quality graphics |
 | Main concern | Transport protection | Product protection + presentation |
 
-Not sure which applies to your next shipment? Contact [**Elevate**](/) at [**+1 (555) 010-0100**](tel:+15550100100) or [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com), and we'll help you decide based on your actual order size.
+Not sure which applies to your next shipment? Contact [**Elevate**](/) at [**+1 (415) 985-5597**](tel:+14159855597) or [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com), and we'll help you decide based on your actual order size.
 
 ## Choosing the Right Flexible Packaging for Export
 
@@ -684,7 +684,7 @@ Choosing **packaging materials for rice export**, **spice packaging**, or grain 
 
 Bulk shipments call for durability and moisture resistance above all. Retail packs have to protect the product while still looking good on a store shelf thousands of miles from where they were filled. Spices, by their nature, need a higher level of protection than rice or grains.
 
-Get the match right and you'll see fewer damaged shipments, fewer unhappy buyers, and fewer repeat costs from product that arrived in poor condition. If you're unsure which structure suits your export, [**Elevate**](/) can help you work through it based on your product, volume, and destination. Email [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com) or call [**+1 (555) 010-0100**](tel:+15550100100).`,
+Get the match right and you'll see fewer damaged shipments, fewer unhappy buyers, and fewer repeat costs from product that arrived in poor condition. If you're unsure which structure suits your export, [**Elevate**](/) can help you work through it based on your product, volume, and destination. Email [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com) or call [**+1 (415) 985-5597**](tel:+14159855597).`,
     coverUrl: "/images/products/four-side-seal-pouch-front.webp",
     date: "2026-09-28T00:00:00.000Z",
     featured: false
@@ -814,7 +814,7 @@ Both are used widely in flexible packaging. Food packs, snack pouches, pharmaceu
 
 There's no overall winner. A pharmaceutical company printing high-volume blister foils with stable artwork will likely choose gravure. A retail brand launching seasonal pouch designs across ten SKUs will usually do better with flexo. It all depends on your product and how your production runs.
 
-Unsure which is right for your packaging? **Elevate** can review your volume, substrate, and artwork requirements and recommend a process. Email [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com) or call [**+1 (555) 010-0100**](tel:+15550100100).
+Unsure which is right for your packaging? **Elevate** can review your volume, substrate, and artwork requirements and recommend a process. Email [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com) or call [**+1 (415) 985-5597**](tel:+14159855597).
 
 ## Looking at the Full Cost Picture
 
@@ -871,7 +871,7 @@ Put simply, choose **rotogravure** for high volumes, premium print quality, and 
 
 Plenty of brands land somewhere between these two ends, and that's perfectly fine. There's no sense paying for a premium process your operation doesn't need.
 
-Still weighing your options? Get in touch with [**Elevate**](/) and we'll help you select a printing process that fits your volumes, substrates, and budget. Call [**+1 (555) 010-0100**](tel:+15550100100) or email [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com).`,
+Still weighing your options? Get in touch with [**Elevate**](/) and we'll help you select a printing process that fits your volumes, substrates, and budget. Call [**+1 (415) 985-5597**](tel:+14159855597) or email [**hs.enterprises4921@gmail.com**](mailto:hs.enterprises4921@gmail.com).`,
     coverUrl: "/images/products/rotogravure-film.webp",
     date: "2026-07-30T00:00:00.000Z",
     featured: true

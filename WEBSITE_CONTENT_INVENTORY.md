@@ -17,11 +17,10 @@ Content inventory for **Elevate** (`elevatepackaging.com`), a USA-based flexible
 - **Positioning**: USA-based flexible packaging manufacturer serving brands in food and non-food consumer industries. *TODO: client copy*
 
 ### Contact (appears in header, footer, and Contact page)
-*(All placeholders — replace with real details from the client.)*
-- **Phone**: +1 (555) 010-0100
-- **Email (general/inquiries)**: info@elevatepackaging.com
-- **Email (careers)**: careers@elevatepackaging.com
-- **Head office**: 123 Industrial Way, Suite 100, Anytown, ST 00000, USA
+*(Real contact details, supplied by the client 2026-10-29. Social accounts still pending.)*
+- **Phone**: +1 (415) 985-5597
+- **Email (general/inquiries)**: hs.enterprises4921@gmail.com
+- **Head office**: 3898 El Camino Real, Palo Alto, CA 94306, USA
 - **Social**: *TODO: client copy* (no social accounts confirmed yet)
 
 ### Key-feature badges (currently rotating strip on home)
@@ -73,7 +72,6 @@ Mockup Generator                   [NEW — Phase 3]
 Blog / News & Insights             [NEW — Phase 2]
 Gallery                            [NEW — Phase 2]
 Testimonials                       [NEW — Phase 2]
-Careers
 Contact
 ```
 
@@ -271,28 +269,13 @@ Seed the Innovations module with these six entries (existing Technology pages):
 
 ---
 
-## 9. Careers
-
-### Headings
-- **Careers** / "Vacant Positions"
-
-### Current roles (admin should CRUD in new CMS)
-*TODO: client copy* — the previous company's openings were removed in the rebrand; list real Elevate roles here.
-
-### Applications
-> Email your resume at **careers@elevatepackaging.com** with the subject of the related job.
-
-**New-site upgrade**: add structured apply-now form per listing (Name, Email, Phone, Role, Resume upload, Cover letter) → writes into admin "Applicants" queue + emails `careers@elevatepackaging.com`.
-
----
-
 ## 10. Contact
 
 ### Heading
 > "Contact us on any of below locations for sales and support — or send your Enquiry/Feedback via web."
 
 ### Locations
-- **Head Office** — 123 Industrial Way, Suite 100, Anytown, ST 00000, USA *(placeholder)*
+- **Head Office** — 3898 El Camino Real, Palo Alto, CA 94306, USA
 
 ### Inquiry form (existing fields)
 | Field | Type | Required |
@@ -318,7 +301,7 @@ Seed the Innovations module with these six entries (existing Technology pages):
 | **AI Chat + WhatsApp fallback** | 3 | FAQ-first → AI for complex → WhatsApp handoff. Seed FAQ with copy from Products/Markets pages. |
 | **3D Product Views** | 3 | Client provides 3D models. Start with 1 flagship (recommend Stand-Up Pouch). |
 | **Mockup Generator** | 3 | Upload design → pick pouch type/size/color → preview → send to WhatsApp for production. Pouch-type options sourced from §5.2. |
-| **Admin Panel** | 1 (base) / 2 (full) | JWT auth. CRUD for: Innovations · Products · Markets · Blog · Careers · Gallery · Testimonials · Inquiries · Applicants · Integration settings. |
+| **Admin Panel** | 1 (base) / 2 (full) | JWT auth. CRUD for: Innovations · Products · Markets · Blog · Gallery · Testimonials · Inquiries · Integration settings. |
 
 ---
 
@@ -342,6 +325,6 @@ Seed the Innovations module with these six entries (existing Technology pages):
 - [ ] **3D models** for flagship products (Phase 3 dependency)
 - [ ] **AI chatbot** knowledge-base scope and fallback thresholds
 - [ ] Confirm which **17 market pages** survive as-is vs. merge (Dairy and Fresh Produce are thin; could consolidate)
-- [ ] **WhatsApp Business** number for the button (placeholder +1 (555) 010-0100 — confirm)
+- [ ] **WhatsApp Business** number for the button (placeholder +1 (415) 985-5597 — confirm it is on WhatsApp)
 - [ ] Eco-Friendly Bags — dedicated landing page?
 - [ ] Confirm **certifications** held and company **positioning / tagline** copy

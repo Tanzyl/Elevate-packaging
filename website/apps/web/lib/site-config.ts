@@ -8,28 +8,27 @@ export const site = {
   tagline:
     "Elevate makes flexible packaging in the USA, producing printed films and custom pouches that keep products safe and give brands a standout look on shelf.",
 
-  // TODO: placeholder contact details — replace with the real ones.
   contact: {
-    phones: ["+1 (555) 010-0100"],
-    emails: { general: "info@elevatepackaging.com" },
+    phones: ["+1 (415) 985-5597"],
+    emails: { general: "hs.enterprises4921@gmail.com" },
     // Flat list kept for schema.org (seo.ts) and the contact page.
     addresses: [
       {
         label: "Head Office",
-        value: "123 Industrial Way, Suite 100, Anytown, ST 00000, USA"
+        value: "3898 El Camino Real, Palo Alto, CA 94306, USA"
       }
     ],
     // Grouped locations for the contact-page "Locations" section and footer.
     locations: [
       {
         label: "Head Office",
-        address: ["123 Industrial Way, Suite 100", "Anytown, ST 00000, USA"],
-        phones: ["+1 (555) 010-0100"],
-        email: "info@elevatepackaging.com"
+        address: ["3898 El Camino Real", "Palo Alto, CA 94306, USA"],
+        phones: ["+1 (415) 985-5597"],
+        email: "hs.enterprises4921@gmail.com"
       }
     ],
     whatsappNumber:
-      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "15550100100",
+      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "14159855597",
     social: {
       facebook: "https://www.facebook.com/",
       twitter: "https://twitter.com/",
