@@ -106,24 +106,24 @@ const DEFAULT_VIDEOS = [
 
 const DEFAULT_INNOVATIONS = [
   {
-    slug: "special-3d-uv-effects",
-    title: "Special 3D UV Effects",
-    summary: "Raised, touchable spot-UV finishes for flexible packs.",
+    slug: "shaped-die-cut-pouch",
+    title: "Shaped/Die-Cut Pouch",
+    summary: "Die-cut pouches in custom shapes that stand apart on shelf.",
     body:
-      "Dimensional spot-UV layers you can feel give flexible packaging extra depth, texture, and a luxury touch that helps brands catch the eye on shelf.",
-    coverUrl: img.products["rotogravure"],
-    videoUrl: "https://youtube.com/shorts/CJl_ukd0LBg",
+      "With a custom die-cut outline, the pouch itself can echo your product or brand identity, setting it clearly apart from standard bags on shelf.",
+    coverUrl: "/images/innovations/shaped-die-cut-pouch.webp",
+    videoUrl: null,
     featured: true,
     order: 0,
     published: true
   },
   {
-    slug: "4d-pouch",
-    title: "4D Pouch",
-    summary: "A pouch format with a bold, three-dimensional build.",
+    slug: "cold-and-hot-stamping",
+    title: "Cold and Hot Stamping",
+    summary: "Genuine foil stamping for flexible packs, using cold or hot application.",
     body:
-      "Elevate's 4D pouch has a unique three-dimensional structure that commands attention on shelf and makes opening the pack feel premium.",
-    coverUrl: "/images/innovations/4d-pouch.webp",
+      "We apply authentic metallic foil to flexible packaging using either cold or hot stamping. The result is crisper and brighter than any metallic ink, and it lines up exactly with the artwork, so logos and highlights carry a true foil finish on shelf-ready bags.",
+    coverUrl: "/images/industries/rice-packaging-04.webp",
     videoUrl: null,
     featured: false,
     order: 1,
@@ -142,27 +142,15 @@ const DEFAULT_INNOVATIONS = [
     published: true
   },
   {
-    slug: "shaped-die-cut-pouch",
-    title: "Shaped/Die-Cut Pouch",
-    summary: "Die-cut pouches in custom shapes that stand apart on shelf.",
+    slug: "4d-pouch",
+    title: "4D Pouch",
+    summary: "A pouch format with a bold, three-dimensional build.",
     body:
-      "With a custom die-cut outline, the pouch itself can echo your product or brand identity, setting it clearly apart from standard bags on shelf.",
-    coverUrl: "/images/innovations/shaped-die-cut-pouch.webp",
+      "Elevate's 4D pouch has a unique three-dimensional structure that commands attention on shelf and makes opening the pack feel premium.",
+    coverUrl: "/images/innovations/4d-pouch-summit.webp",
     videoUrl: null,
     featured: false,
     order: 3,
-    published: true
-  },
-  {
-    slug: "cold-and-hot-stamping",
-    title: "Cold and Hot Stamping",
-    summary: "Genuine foil stamping for flexible packs, using cold or hot application.",
-    body:
-      "We apply authentic metallic foil to flexible packaging using either cold or hot stamping. The result is crisper and brighter than any metallic ink, and it lines up exactly with the artwork, so logos and highlights carry a true foil finish on shelf-ready bags.",
-    coverUrl: "/images/innovations/cold-and-hot-stamping.webp",
-    videoUrl: null,
-    featured: false,
-    order: 4,
     published: true
   }
 ];

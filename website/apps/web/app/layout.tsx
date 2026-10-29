@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       "Premium flexible packaging: custom printed pouches, laminated films, and rotogravure & flexographic printing.",
     images: [
       {
-        url: "/images/hero.webp",
+        url: "/images/hero-lineup.webp",
         alt: "Elevate flexible packaging"
       }
     ]
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "Elevate: Flexible Packaging Manufacturer in the USA",
     description:
       "Premium flexible packaging: custom printed pouches, laminated films, and rotogravure & flexographic printing.",
-    images: ["/images/hero.webp"]
+    images: ["/images/hero-lineup.webp"]
   },
 
   robots: {

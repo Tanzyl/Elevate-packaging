@@ -7,7 +7,7 @@ import { site } from "@/lib/site-config";
 // Must match the host production actually serves on (Vercel 308s the apex to
 // www) — a non-www value here makes every canonical/OG/sitemap URL a redirect.
 export const SITE_URL = "https://www.elevatepackaging.com";
-const DEFAULT_OG_IMAGE = "/images/hero.webp";
+const DEFAULT_OG_IMAGE = "/images/hero-lineup.webp";
 
 type PageSeoInput = {
   title: string;

@@ -73,7 +73,6 @@ export const industries: Industry[] = [
       "/images/industries/rice-packaging-06.webp",
       "/images/industries/rice-packaging-07.webp",
       "/images/industries/rice-packaging-08.webp",
-      "/images/industries/rice-packaging-09.webp",
       "/images/industries/rice-packaging-10.webp"
     ]
   },

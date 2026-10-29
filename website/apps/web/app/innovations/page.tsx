@@ -11,7 +11,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata = pageSeo({
   title: "Packaging Innovations",
   description:
-    "See what's new at Elevate: 3D UV special effects, 4D pouches, kraft paper bread bags, and both cold and hot foil stamping.",
+    "See what's new at Elevate: shaped die-cut pouches, cold and hot foil stamping, kraft paper bread bags, and 4D pouches.",
   path: "/innovations"
 });
 export const revalidate = 60;

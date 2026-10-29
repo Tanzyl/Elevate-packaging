@@ -89,19 +89,15 @@ export const nav: { primary: NavItem[] } = {
           label: "Pouches",
           href: "/products/pouches",
           children: [
-            { label: "4D Pouch", href: "/products/pouches/4d-pouch" },
             { label: "Centre Seal", href: "/products/pouches/centre-seal-pouch" },
-            { label: "Centre Seal Gusset", href: "/products/pouches/centre-seal-gusset-pouch" },
             { label: "Flat Bottom Pouch", href: "/products/pouches/flat-bottom-pouch" },
             { label: "Box Pouch", href: "/products/pouches/box-pouch" },
             { label: "Four Side Seal", href: "/products/pouches/four-side-seal-pouch" },
-            { label: "Book Shape Pouch", href: "/products/pouches/book-shape-pouch" },
             { label: "Standup Pouch", href: "/products/pouches/stand-up-pouch" },
             { label: "Spout/Nozzle Pouch", href: "/products/pouches/spout-nozzle-pouch" },
             { label: "Shaped/Die-Cut Pouch", href: "/products/pouches/shaped-die-cut-pouch" },
             { label: "Kraft Paper Bread Pouch", href: "/products/pouches/kraft-paper-bread-pouch" },
             { label: "Kraft Paper Pouch", href: "/products/pouches/kraft-paper-pouch" },
-            { label: "Textile Slider Pouch", href: "/products/pouches/textile-slider-pouch" }
           ]
         }
       ]

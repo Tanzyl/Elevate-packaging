@@ -49,7 +49,7 @@ export const featuredProducts = [
   { name: "Centre Seal Pouch", href: "/products/pouches/centre-seal-pouch" },
   { name: "Flat Bottom Pouch", href: "/products/pouches/flat-bottom-pouch" },
   { name: "Shaped / Die-Cut Pouch", href: "/products/pouches/shaped-die-cut-pouch" },
-  { name: "4D Pouch", href: "/products/pouches/4d-pouch" },
+  { name: "Box Pouch", href: "/products/pouches/box-pouch" },
   { name: "Metallization", href: "/products/plastic-films/metallization" },
   { name: "Rotogravure", href: "/products/printed-films/rotogravure" }
 ] as const;

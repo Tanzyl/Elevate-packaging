@@ -95,7 +95,7 @@ const printedFilms: ProductCategory = {
       ],
       moq: "On request",
       leadTime: DEFAULT_LEAD_TIME,
-      gallery: ["/images/products/rotogravure-front.webp"]
+      gallery: ["/images/products/rotogravure-film.webp"]
     },
     {
       slug: "flexography",
@@ -120,7 +120,7 @@ const printedFilms: ProductCategory = {
       ],
       moq: "On request",
       leadTime: DEFAULT_LEAD_TIME,
-      gallery: ["/images/products/flexography-front.webp"]
+      gallery: ["/images/products/flexography-film.webp"]
     }
   ]
 };
@@ -157,7 +157,7 @@ const plasticFilms: ProductCategory = {
         { label: "Base films", value: "PE · LDPE · LLDPE · multi-layer co-extrusion" },
         { label: "Layer count", value: "Single-layer through multi-layer builds" }
       ],
-      gallery: ["/images/products/extrusion-front.webp"],
+      gallery: ["/images/products/extrusion-film.webp"],
       moq: "On request",
       leadTime: DEFAULT_LEAD_TIME
     },
@@ -183,7 +183,7 @@ const plasticFilms: ProductCategory = {
         { label: "Film options", value: "Holographic PET · LDPE · BOPP" },
         { label: "Customization", value: "Brand-specific colors and holographic patterns" }
       ],
-      gallery: ["/images/products/holography-front.webp"],
+      gallery: ["/images/products/holography-film.webp"],
       moq: "On request",
       leadTime: DEFAULT_LEAD_TIME
     },
@@ -209,7 +209,7 @@ const plasticFilms: ProductCategory = {
         { label: "Metallized films", value: "MET PET · MET CPP · MET BOPP · MET LDPE" },
         { label: "Metallizing speed", value: "As fast as 400 m/min, metal on film" }
       ],
-      gallery: ["/images/products/metallization-front.webp"],
+      gallery: ["/images/products/metallization-film.webp"],
       moq: "On request",
       leadTime: DEFAULT_LEAD_TIME
     }
@@ -217,46 +217,15 @@ const plasticFilms: ProductCategory = {
 };
 
 /* ============================================================
-   3 · Pouches (13)  — incl. kraft-paper-bread, kraft-paper, textile-slider
+   3 · Pouches (9)  — incl. kraft-paper-bread, kraft-paper
    ============================================================ */
 
 const pouches: ProductCategory = {
   slug: "pouches",
   name: "Pouches",
   intro:
-    "Heat-sealable, high-barrier pouches across all the key formats: center-seal, flat-bottom, box, four-side-seal, stand-up, spouted, shaped, kraft, and slider. Every style can be built multi-layer and printed in as many as 8 colors.",
+    "Heat-sealable, high-barrier pouches across all the key formats: center-seal, flat-bottom, box, four-side-seal, stand-up, spouted, shaped, and kraft. Every style can be built multi-layer and printed in as many as 8 colors.",
   products: [
-    {
-      slug: "4d-pouch",
-      name: "4D Pouch",
-      categorySlug: "pouches",
-      summary:
-        "An eye-catching 4D pouch built to give products an upscale look on the shelf.",
-      description: [
-        "Elevate's 4D Pouch adds a one-of-a-kind three-dimensional build to flexible packaging. The sculpted shape reads as premium, yet the pack keeps all the everyday practicality of a stand-up pouch.",
-        "Barrier layers, robust heat seals, and a choice of finishes can all be built in, so brands get a package that both protects the contents and makes a strong impression."
-      ],
-      applications: [
-        "Coffee: Upscale packs from 250 g to 1 kg, including builds ready for a degassing valve.",
-        "Pet Food: Packs from 1 kg to 15 kg that are easy to carry and keep the contents well protected.",
-        "Rice & Legumes: A steady format that lines up neatly on store shelves and in the warehouse.",
-        "Agri-Feed Products: A rugged option for goods that need added strength through handling and shipping."
-      ],
-      features: ["zipper", "tear-notch", "custom-shape", "metallized", "multi-layer"],
-      finishes: [...FINISHES_ALL],
-      specs: [
-        ...COMMON_POUCH_SPECS,
-        { label: "Style", value: "Premium four-dimensional build" }
-      ],
-      gallery: [
-        "/images/products/4d-pouch-front.webp",
-        "/images/products/4d-pouch-left.webp",
-        "/images/products/4d-pouch-right.webp",
-        "/images/products/4d-pouch-back.webp"
-      ],
-      moq: DEFAULT_MOQ,
-      leadTime: DEFAULT_LEAD_TIME
-    },
     {
       slug: "centre-seal-pouch",
       name: "Centre Seal",
@@ -284,35 +253,6 @@ const pouches: ProductCategory = {
       leadTime: DEFAULT_LEAD_TIME
     },
     {
-      slug: "centre-seal-gusset-pouch",
-      name: "Centre Seal Gusset",
-      categorySlug: "pouches",
-      summary:
-        "Adding gussets to a basic center-seal bag opens up more fill volume without turning it into a bulky pack. It's a sensible pick for snacks, powders, dry goods, and other light products.",
-      description: [
-        "Side gussets expand the bag's capacity while it keeps the familiar pillow profile shoppers know. We can build it from a range of films and multi-layer structures to strike the right mix of strength, protection, and shelf appeal for your product."
-      ],
-      applications: [
-        "Snacks & Dry Foods: The gussets make room for chips, snacks, cookies, and other dry foods.",
-        "Powders & Granulated Products: Well matched to flour, powdered mixes, spices, and other dry ingredients.",
-        "Pet Food: Good for smaller pet food packs that benefit from extra volume in a simple, easy-carry format.",
-        "Seeds & Agricultural Products: The extra gusset volume suits seeds and other light agricultural goods."
-      ],
-      features: ["vent-hole", "tear-notch", "metallized", "multi-layer"],
-      finishes: [...FINISHES_ALL],
-      specs: [
-        ...COMMON_POUCH_SPECS,
-        { label: "Build", value: "Center seal plus side gussets" }
-      ],
-      gallery: [
-        "/images/products/centre-seal-gusset-pouch-front.webp",
-        "/images/products/centre-seal-gusset-pouch-left.webp",
-        "/images/products/centre-seal-gusset-pouch-right.webp"
-      ],
-      moq: DEFAULT_MOQ,
-      leadTime: DEFAULT_LEAD_TIME
-    },
-    {
       slug: "flat-bottom-pouch",
       name: "Flat Bottom Pouch",
       categorySlug: "pouches",
@@ -334,11 +274,7 @@ const pouches: ProductCategory = {
         { label: "Base options", value: "Side gusseted · Flat bottom box · Pinch bottom" },
         { label: "Rounded corners", value: "Offered on request" }
       ],
-      gallery: [
-        "/images/products/flat-bottom-pouch-front.webp",
-        "/images/products/flat-bottom-pouch-left.webp",
-        "/images/products/flat-bottom-pouch-right.webp"
-      ],
+      gallery: ["/images/products/flat-bottom-pouch-front.webp"],
       moq: DEFAULT_MOQ,
       leadTime: DEFAULT_LEAD_TIME
     },
@@ -364,11 +300,7 @@ const pouches: ProductCategory = {
         ...COMMON_POUCH_SPECS,
         { label: "Build", value: "Square-base, box-style structure" }
       ],
-      gallery: [
-        "/images/products/box-pouch-front.webp",
-        "/images/products/box-pouch-left.webp",
-        "/images/products/box-pouch-right.webp"
-      ],
+      gallery: ["/images/products/box-pouch-front.webp"],
       moq: DEFAULT_MOQ,
       leadTime: DEFAULT_LEAD_TIME
     },
@@ -396,38 +328,7 @@ const pouches: ProductCategory = {
       ],
       gallery: [
         "/images/products/four-side-seal-pouch-front.webp",
-        "/images/products/four-side-seal-pouch-left.webp",
-        "/images/products/four-side-seal-pouch-right.webp"
-      ],
-      moq: DEFAULT_MOQ,
-      leadTime: DEFAULT_LEAD_TIME
-    },
-    {
-      slug: "book-shape-pouch",
-      name: "Book Shape Pouch",
-      categorySlug: "pouches",
-      summary:
-        "A slender pouch shaped like a book, with flat front, back, and spine panels that give it a refined look on the shelf.",
-      description: [
-        "This pouch folds the way a book does, forming flat front, back, and spine panels. The spine doubles as extra space for your logo and product info, and the flat faces make artwork layout simple.",
-        "You get the same barrier and heat-seal performance as a standard pouch; what sets it apart is the shape. It's a smart pick for brands that want a standout item in their lineup without giving up the benefits of flexible packaging. Dimensions and structure can be adjusted to suit the product."
-      ],
-      applications: [
-        "Coffee & Tea: A standout format for premium coffee and tea where the package itself is part of the brand story.",
-        "Confectionery: A natural fit for chocolate, candy, and other upscale treats that deserve a polished pack.",
-        "Specialty Foods: Works well for nuts, dried fruit, gourmet items, and other products that need to stand apart on the shelf.",
-        "Personal Care: Suits select light personal care products where a slim, unusual pouch makes sense."
-      ],
-      features: ["tear-notch", "metallized", "multi-layer"],
-      finishes: [...FINISHES_ALL],
-      specs: [
-        ...COMMON_POUCH_SPECS,
-        { label: "Build", value: "Book-style fold with flat spine panels" }
-      ],
-      gallery: [
-        "/images/products/book-shape-pouch-front.webp",
-        "/images/products/book-shape-pouch-left.webp",
-        "/images/products/book-shape-pouch-right.webp"
+        "/images/products/four-side-seal-pouch-02.webp"
       ],
       moq: DEFAULT_MOQ,
       leadTime: DEFAULT_LEAD_TIME
@@ -457,8 +358,7 @@ const pouches: ProductCategory = {
       ],
       gallery: [
         "/images/products/stand-up-pouch-front.webp",
-        "/images/products/stand-up-pouch-left.webp",
-        "/images/products/stand-up-pouch-right.webp"
+        "/images/products/stand-up-pouch-02.webp"
       ],
       moq: DEFAULT_MOQ,
       leadTime: DEFAULT_LEAD_TIME
@@ -487,7 +387,10 @@ const pouches: ProductCategory = {
         ...COMMON_POUCH_SPECS,
         { label: "Spout options", value: "Range of diameters · Tamper-evident closures" }
       ],
-      gallery: ["/images/products/spout-nozzle-pouch-front.webp"],
+      gallery: [
+        "/images/products/spout-nozzle-pouch-front.webp",
+        "/images/products/spout-nozzle-pouch-02.webp"
+      ],
       moq: DEFAULT_MOQ,
       leadTime: DEFAULT_LEAD_TIME
     },
@@ -518,7 +421,11 @@ const pouches: ProductCategory = {
         "/images/products/shaped-die-cut-pouch-1.webp",
         "/images/products/shaped-die-cut-pouch-2.webp",
         "/images/products/shaped-die-cut-pouch-3.webp",
-        "/images/products/shaped-die-cut-pouch-4.webp"
+        "/images/products/shaped-die-cut-pouch-4.webp",
+        "/images/products/shaped-die-cut-pouch-5.webp",
+        "/images/products/shaped-die-cut-pouch-6.webp",
+        "/images/products/shaped-die-cut-pouch-7.webp",
+        "/images/products/shaped-die-cut-pouch-8.webp"
       ],
       moq: DEFAULT_MOQ,
       leadTime: "4–6 weeks, including die making and production"
@@ -584,36 +491,6 @@ const pouches: ProductCategory = {
       moq: DEFAULT_MOQ,
       leadTime: DEFAULT_LEAD_TIME
     },
-    {
-      slug: "textile-slider-pouch",
-      name: "Textile Slider Pouch",
-      categorySlug: "pouches",
-      summary:
-        "A resealable slider-zip pouch with a see-through front, designed for apparel, bedding, and other textiles.",
-      description: [
-        "With the **textile slider pouch**, shoppers can view the item without opening the package. The clear face makes it simple to check color, pattern, or fabric type, and the pouch keeps dust and dirt off the contents.",
-        "An easy-glide **slider zipper** opens and recloses smoothly, so the pouch stays useful long after purchase. It's available clear or printed and can include a **reinforced hang hole** for store displays, racks, and rails."
-      ],
-      applications: [
-        "Garments: Fits shirts, pants, scarves, kids' clothing, and other folded apparel.",
-        "Bedding: Good for sheets, pillowcases, towels, and other home textiles.",
-        "Home Textiles: Works for select fabric and textile goods sold at retail.",
-        "Fashion Accessories: Suits scarves, fabric accessories, and other items that sell better when shoppers can see them."
-      ],
-      features: ["zipper", "hang-hole", "custom-shape", "multi-layer"],
-      finishes: [...FINISHES_ALL],
-      specs: [
-        ...COMMON_POUCH_SPECS,
-        { label: "Reclosure", value: "Slider zipper, reusable" },
-        { label: "Window", value: "See-through front panel" }
-      ],
-      gallery: [
-        "/images/products/textile-slider-pouch-front.webp",
-        "/images/products/textile-slider-pouch-02.webp"
-      ],
-      moq: DEFAULT_MOQ,
-      leadTime: DEFAULT_LEAD_TIME
-    }
   ]
 };
 

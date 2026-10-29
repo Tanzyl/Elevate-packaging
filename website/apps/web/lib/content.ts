@@ -249,11 +249,6 @@ export const innovations = [
     body:
       "Genuine metallic foil is applied with heat onto printed flexible pouches. It's crisper than metallic ink and sits in register with the design, giving logos and highlights an authentic foil look on shelf-ready bags."
   },
-  {
-    title: "3D UV Effects",
-    body:
-      "Spot UV-cured varnishes create raised, touchable texture on the print. Think embossed-style lettering, tactile patterns, and glossy-against-matte contrast, all applied inline with no extra steps."
-  },
 ] as const;
 
 export const services = [

@@ -334,7 +334,7 @@ The most sustainable pack isn't necessarily the one that looks greenest. It's th
 Begin with what the snack needs. Compare materials on fair terms, trial a few, and ask for documentation. If an option compromises freshness, rule it out.
 
 Ready to explore your options? Reach Elevate at +1 (555) 010-0100 or info@elevatepackaging.com, and we'll help you find packaging that suits your product.`,
-    coverUrl: "/images/businesses/sustainable-packaging.webp",
+    coverUrl: "/images/products/kraft-paper-pouch-front.webp",
     date: "2026-10-16T00:00:00.000Z",
     featured: false
   },
@@ -505,7 +505,7 @@ Many now use recyclable or reduced-material structures, which can make them a gr
 ## The Bottom Line
 
 Heat and humidity are unforgiving to weak packaging, and tea and coffee lose freshness quickly once air or moisture gets in. Stand-up pouches answer that with solid barrier protection, while giving brands more space to stand out and a format that's simpler to store and ship. Whether you're an established label or launching a small direct-to-consumer line, the format can scale with you. [**Elevate**](/) can help you choose the right pouch for your product; reach us at [**+1 (555) 010-0100**](tel:+15550100100) or [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com).`,
-    coverUrl: "/images/innovations/Blog-image2.png",
+    coverUrl: "/images/hero-lineup.webp",
     date: "2026-09-28T00:00:00.000Z",
     featured: false
   },
@@ -685,7 +685,7 @@ Choosing **packaging materials for rice export**, **spice packaging**, or grain 
 Bulk shipments call for durability and moisture resistance above all. Retail packs have to protect the product while still looking good on a store shelf thousands of miles from where they were filled. Spices, by their nature, need a higher level of protection than rice or grains.
 
 Get the match right and you'll see fewer damaged shipments, fewer unhappy buyers, and fewer repeat costs from product that arrived in poor condition. If you're unsure which structure suits your export, [**Elevate**](/) can help you work through it based on your product, volume, and destination. Email [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com) or call [**+1 (555) 010-0100**](tel:+15550100100).`,
-    coverUrl: "/images/innovations/blo-image1.png",
+    coverUrl: "/images/products/four-side-seal-pouch-front.webp",
     date: "2026-09-28T00:00:00.000Z",
     featured: false
   },
@@ -872,7 +872,7 @@ Put simply, choose **rotogravure** for high volumes, premium print quality, and 
 Plenty of brands land somewhere between these two ends, and that's perfectly fine. There's no sense paying for a premium process your operation doesn't need.
 
 Still weighing your options? Get in touch with [**Elevate**](/) and we'll help you select a printing process that fits your volumes, substrates, and budget. Call [**+1 (555) 010-0100**](tel:+15550100100) or email [**info@elevatepackaging.com**](mailto:info@elevatepackaging.com).`,
-    coverUrl: "/images/products/4d-pouch-front.webp",
+    coverUrl: "/images/products/rotogravure-film.webp",
     date: "2026-07-30T00:00:00.000Z",
     featured: true
   },

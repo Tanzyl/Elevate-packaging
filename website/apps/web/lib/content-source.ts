@@ -288,34 +288,8 @@ type ApiInnovation = PublicInnovation & {
 };
 
 // Fallback innovations, used when the API is unreachable.
+// Order alternates pack formats with print finishes.
 const FALLBACK_INNOVATIONS: PublicInnovation[] = [
-  {
-    slug: "special-3d-uv-effects",
-    title: "Special 3D UV Effects",
-    summary: "Raised, touchable spot-UV finishes for flexible packs.",
-    body:
-      "Dimensional spot-UV layers you can feel give flexible packaging extra depth, texture, and a luxury touch that helps brands catch the eye on shelf.",
-    coverUrl: img.products["rotogravure"],
-    videoUrl: "https://youtube.com/shorts/CJl_ukd0LBg"
-  },
-  {
-    slug: "4d-pouch",
-    title: "4D Pouch",
-    summary: "A pouch format with a bold, three-dimensional build.",
-    body:
-      "Elevate's 4D pouch has a unique three-dimensional structure that commands attention on shelf and makes opening the pack feel premium.",
-    coverUrl: "/images/innovations/4d-pouch.webp",
-    videoUrl: null
-  },
-  {
-    slug: "kraft-paper-bread-pouch",
-    title: "Kraft Paper Bread Pouch",
-    summary: "A kraft pouch that lets bread and baked goods breathe.",
-    body:
-      "Designed specifically for bread and bakery items, our kraft paper pouch lets products breathe while still keeping them fresh.",
-    coverUrl: "/images/innovations/kraft-paper-bread-pouch.webp",
-    videoUrl: null
-  },
   {
     slug: "shaped-die-cut-pouch",
     title: "Shaped/Die-Cut Pouch",
@@ -331,7 +305,25 @@ const FALLBACK_INNOVATIONS: PublicInnovation[] = [
     summary: "Genuine foil stamping for flexible packs, using cold or hot application.",
     body:
       "We apply authentic metallic foil to flexible packaging using either cold or hot stamping. The result is crisper and brighter than any metallic ink, and it lines up exactly with the artwork, so logos and highlights carry a true foil finish on shelf-ready bags.",
-    coverUrl: "/images/innovations/cold-and-hot-stamping.webp",
+    coverUrl: "/images/industries/rice-packaging-04.webp",
+    videoUrl: null
+  },
+  {
+    slug: "kraft-paper-bread-pouch",
+    title: "Kraft Paper Bread Pouch",
+    summary: "A kraft pouch that lets bread and baked goods breathe.",
+    body:
+      "Designed specifically for bread and bakery items, our kraft paper pouch lets products breathe while still keeping them fresh.",
+    coverUrl: "/images/innovations/kraft-paper-bread-pouch.webp",
+    videoUrl: null
+  },
+  {
+    slug: "4d-pouch",
+    title: "4D Pouch",
+    summary: "A pouch format with a bold, three-dimensional build.",
+    body:
+      "Elevate's 4D pouch has a unique three-dimensional structure that commands attention on shelf and makes opening the pack feel premium.",
+    coverUrl: "/images/innovations/4d-pouch-summit.webp",
     videoUrl: null
   }
 ];

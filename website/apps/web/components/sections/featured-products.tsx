@@ -19,7 +19,7 @@ const featured: {
   { name: "Flat Bottom Pouch", key: "flat-bottom-pouch", href: "/products/pouches/flat-bottom-pouch", ink: "yellow" },
   { name: "Spout / Nozzle Pouch", key: "spout-nozzle-pouch", href: "/products/pouches/spout-nozzle-pouch", ink: "green" },
   { name: "Shaped / Die-Cut Pouch", key: "shaped-die-cut-pouch", href: "/products/pouches/shaped-die-cut-pouch", ink: "magenta" },
-  { name: "4D Pouch", key: "4d-pouch", href: "/products/pouches/4d-pouch", ink: "gold" },
+  { name: "Box Pouch", key: "box-pouch", href: "/products/pouches/box-pouch", ink: "gold" },
   { name: "Printed Films", key: "rotogravure", href: "/products/printed-films", ink: "cyan" },
   { name: "Holography", key: "holography", href: "/products/plastic-films/holography", ink: "green" }
 ];

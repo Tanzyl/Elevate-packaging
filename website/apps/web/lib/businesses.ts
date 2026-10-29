@@ -149,7 +149,7 @@ export const businesses: Business[] = [
     name: "Plastic Films",
     description:
       "Extrusion and converting of multi-layer films, the base materials behind every package we produce.",
-    image: "/images/businesses/plastic-films.webp",
+    image: "/images/capabilities/extrusion.webp",
     tagline: "We extrude, metallize, and finish films for packaging that has to deliver dependable barrier protection, toughness, and eye-catching shelf presence.",
     overview: [
       "Our film unit produces the plastic films that feed every printing and converting line we run. Its high-speed lines make single-layer and multi-layer PE films in a variety of structures, each designed for a purpose, whether that's strength, flexibility, barrier, or strong sealing.",
@@ -207,7 +207,7 @@ export const businesses: Business[] = [
       },
       {
         title: "Pouch & Bag Converting",
-        text: "Stand-up, flat-bottom, box, four-side-seal, center-seal, spout, shaped die-cut, and textile slider pouches, along with handle bags."
+        text: "Stand-up, flat-bottom, box, four-side-seal, center-seal, spout, and shaped die-cut pouches, along with kraft paper pouches and handle bags."
       },
       {
         title: "FFS Roll Stock",
@@ -231,7 +231,7 @@ export const businesses: Business[] = [
     name: "Sustainable Packaging",
     description:
       "Lower-impact packaging through recyclable mono-material builds, kraft paper formats, and designs that use less material.",
-    image: "/images/businesses/sustainable-packaging.webp",
+    image: "/images/products/kraft-paper-pouch-front.webp",
     tagline: "Packaging designed to use less material and tread lighter on the environment, without sacrificing protection, performance, or shelf appeal.",
     overview: [
       "Our sustainability work is about shrinking environmental impact while keeping the protection, strength, and print quality each product requires. Together with our packaging teams, we choose materials and structures that use less material and improve the odds of recycling.",

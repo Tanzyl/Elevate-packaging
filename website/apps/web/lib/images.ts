@@ -81,19 +81,15 @@ const productImageMap: Record<string, number> = {
   metallization: PX.aluminumFoil,
 
   // Pouches
-  "4d-pouch": PX.coffeeBag,
   "centre-seal-pouch": PX.assortedSnacks,
-  "centre-seal-gusset-pouch": PX.vendingSnacks,
   "flat-bottom-pouch": PX.coffeeBag,
   "box-pouch": PX.ecoBoxes,
   "four-side-seal-pouch": PX.chipsCloseup,
-  "book-shape-pouch": PX.paperBagBlack,
   "stand-up-pouch": PX.coffeeBag,
   "spout-nozzle-pouch": PX.cosmeticPack,
   "shaped-die-cut-pouch": PX.cosmeticPack,
   "kraft-paper-bread-pouch": PX.coffeeBeanBag,
   "kraft-paper-pouch": PX.paperBagBlack,
-  "textile-slider-pouch": PX.boutiqueBag
 };
 
 /* -------------------- category slug → Pexels ID -------------------- */
@@ -107,7 +103,7 @@ const categoryImageMap: Record<string, number> = {
 /* -------------------- image map -------------------- */
 
 export const img = {
-  hero: "/images/hero.webp",
+  hero: "/images/hero-lineup.webp",
 
   about: {
     factory: pexels(PX.ecoBoxes, 1200),
@@ -120,9 +116,9 @@ export const img = {
   // section). Sourced from a representative LOCAL product photo per category
   // (no internet stock); falls back to Pexels only if the local image is missing.
   categories: {
-    "printed-films": "/images/products/print-films-cover.webp",
-    "plastic-films": "/images/products/plastic-films-cover.webp",
-    pouches: "/images/products/pouches-cover.webp"
+    "printed-films": "/images/products/rotogravure-film.webp",
+    "plastic-films": "/images/products/plastic-films-group.webp",
+    pouches: "/images/hero-lineup.webp"
   },
 
   // Individual product thumbnails (featured grid) — Proxy returns a Pexels URL per slug
@@ -144,9 +140,9 @@ export const img = {
   // Mega-menu preview — prefers the right-side (15°) shot, then front, then Pexels.
   productMenu: (slug: string) => {
     // These products use their front (cover) shot in the menu instead of the
-    // right-side angle: 4D Pouch matches its cover; Kraft Paper Bread Pouch's
-    // new front photo is the chosen menu cover.
-    const frontInMenu = ["4d-pouch", "kraft-paper-bread-pouch"];
+    // right-side angle: Kraft Paper Bread Pouch's new front photo is the
+    // chosen menu cover.
+    const frontInMenu = ["kraft-paper-bread-pouch"];
     if (frontInMenu.includes(slug) && localProductPhoto[slug]) {
       return localProductPhoto[slug];
     }

@@ -55,19 +55,15 @@ const labelledUses = new Set([
   "extrusion",
   "holography",
   "metallization",
-  "4d-pouch",
   "centre-seal-pouch",
-  "centre-seal-gusset-pouch",
   "flat-bottom-pouch",
   "box-pouch",
   "four-side-seal-pouch",
-  "book-shape-pouch",
   "stand-up-pouch",
   "spout-nozzle-pouch",
   "shaped-die-cut-pouch",
   "kraft-paper-bread-pouch",
   "kraft-paper-pouch",
-  "textile-slider-pouch"
 ]);
 
 const panel = "rounded-3xl border border-line/10 bg-card p-6 shadow-sm md:p-7";

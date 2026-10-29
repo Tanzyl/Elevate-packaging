@@ -1,227 +1,155 @@
 # Product Image Generation Prompts
 
-AI image-generation prompts for the full Elevate product catalogue — **17 products** across 3 categories. Each product gets **3 shots**: **Front**, **15° Left**, and **15° Right**, all as a professional studio product shoot on a seamless white backdrop.
+AI image prompts for the products section: **17 products + 3 category covers**, showing **realistic retail packaging with original, fictional branding**: invented brand names and artwork, never a real brand, trademark, or recognizable logo, so the images are safe to publish.
 
-> Source of truth: `website/apps/web/lib/products.ts`. Slugs below match that file so generated files drop straight into the catalogue.
+> Source of truth: `website/apps/web/lib/products.ts` (product `gallery` arrays) and `lib/images.ts` (category covers). Every filename below is one the site **already loads**: save the new image under the same name in `website/apps/web/public/images/products/` and it replaces the old one with no code change.
 
 ---
 
 ## How to use
 
-1. Pick a product below.
-2. Generate the 3 prompts (Front / 15° Left / 15° Right). Keeping the same subject + seed across the 3 angles gives a consistent product across the trio.
-3. Save each output using the recommended filename, then reference them in the product's `gallery` array.
+1. Copy the **Style block** + the product's **Subject**, then append the **Angle** line for the file you're generating.
+2. Use the **Negative prompt** on every generation.
+3. Keep the same seed/subject across a product's angles so front/left/right show the same pack.
+4. Check the brand text in each output: AI generators misspell words. Regenerate (or fix in an editor) anything garbled. Short names (1 to 2 words) render most reliably.
+5. Output square, `2048 × 2048`, then convert to WebP (quality ~80) under the exact filename listed. Don't commit JPG/PNG (see the WebP rule in `CLAUDE.md`).
 
-**Recommended output**: `2048 × 2048` (or larger), PNG, then optimise to WebP for the web.
+**Copyright check before publishing:** the brand names below are generic, descriptive and invented for this site, but do a quick web search on any name you keep, and never prompt with a real brand, mascot, or character.
 
-**Recommended file paths** (per product slug):
+**Angle lines**
+
+| Angle | Append to prompt | Used by files named |
+|---|---|---|
+| Front | `Straight-on front view, camera at product mid-height, centered.` | `*-front.webp`, `*-1.webp`, `*-front-2.webp` |
+| Left | `Product rotated 15 degrees to the left, showing the front and left side.` | `*-left.webp` |
+| Right | `Product rotated 15 degrees to the right, showing the front and right side.` | `*-right.webp` |
+| Back | `Rear view showing the back panel with simple placeholder info blocks and back seal.` | `*-back.webp` |
+
+---
+
+## Style block (prefix every prompt)
 
 ```
-website/apps/web/public/images/products/<slug>-front.webp
-website/apps/web/public/images/products/<slug>-left.webp
-website/apps/web/public/images/products/<slug>-right.webp
+Professional commercial product studio photograph of realistic retail flexible packaging with an original, fictional brand design. Clean modern package artwork: a short invented brand name in crisp, correctly spelled lettering, simple product illustration or pattern, bold color blocking. Design does not resemble any real brand or logo. Seamless pure-white backdrop with a soft floor gradient and a subtle realistic contact shadow. Soft diffused three-point studio lighting, gentle highlights, no color cast. Photorealistic, ultra-sharp, high detail, 85mm lens at f8, square composition with generous margin around the product.
+```
+
+## Negative prompt (use on all)
+
+```
+real brand names, famous logos, trademarks, copyrighted characters, mascots, celebrity, misspelled text, gibberish text, garbled letters, long paragraphs of text, barcode, QR code, watermark, people, hands, cluttered background, colored background, props, distorted shape, warped seams, extra spouts, extra zippers, low resolution, blurry
 ```
 
 ---
 
-## Global style (baked into every prompt below)
+## Home hero
 
-Every prompt already contains the shared style so it is **copy-paste ready**. For reference, the shared block is:
-
-> Professional commercial product studio photograph. Seamless pure-white (#ffffff) sweep backdrop with a soft floor gradient and a subtle, realistic contact shadow / faint reflection beneath the product. Soft, diffused three-point studio lighting, gentle highlights, no harsh shadows, no color cast. Ultra-sharp focus, photorealistic, high detail, high dynamic range, 8k, commercial packaging photography, shot on an 85mm lens at f8.
->
-> **Brand palette:** deep royal blue `#1e3c8b`, brand red `#e21e2e`, and clean white — dark-blue-and-red color scheme with premium, "royal" feel.
->
-> **Brand label (on the pack/roll):** the **"Elevate"** logo — the word **"ELEVATE" in brand red** and **"PACKAGING" in royal blue**, with a small CMYK swoosh accent (cyan/magenta/yellow/green ribbon). Label is clean, modern, centered and clearly legible.
-
-**Negative prompt (use on all):**
+**File:** `website/apps/web/public/images/hero.webp` (one level up from `products/`), square `2400 × 2400`.
+Rendered in `components/sections/hero.tsx`: cropped 4:5 (mobile) / 5:4 (tablet) / ~square (desktop), anchored `70% 60%`, slow Ken Burns zoom, with label chips over the top-left and bottom-right corners. Keep the products in the central ~60% of the frame. Use this prompt **instead of** the Style block (it has its own background):
 
 ```
-text errors, gibberish text, extra logos, watermark, cluttered background, colored background,
-props, hands, people, lifestyle scene, low resolution, blurry, jpeg artifacts, distorted shape,
-wrinkled unprofessional, harsh shadows, busy pattern, cartoon, 3d render look
+Premium commercial studio photograph of a curated lineup of eight flexible packaging pouches standing on a smooth warm-white surface, arranged in a gentle staggered arc with varied heights for depth: a matte black flat bottom coffee pouch "MORNING ROAST", a sage-green box pouch "LEAF & CUP", a white stand-up pouch "NUTTY TRAIL", an orange-and-green spout pouch "FRESH PRESS", a brown kraft paper pouch with window "WILD OATS", a copper die-cut pouch "HAPPY PAWS", a yellow die-cut spout pouch "LITTLE SPOON", and a large white side-gusset sack "HARVEST GRAIN" anchoring the back. All brands are fictional, original package designs with short, correctly spelled names and simple illustrations; nothing resembles a real brand. Background: soft seamless warm off-white wall with a subtle deep evergreen (#1f5f47) gradient glow behind the group and a faint copper (#c56b36) rim light. Soft diffused key light from upper left, gentle reflections on glossy films, realistic contact shadows. Composition: the product group fills the central 60 percent of the frame, slightly right of center, with calm empty space at the top-left and bottom-right corners and all edges, so it survives tight cropping. Photorealistic, ultra-sharp, high detail, premium editorial packaging photography, 50mm lens at f/8, shallow falloff in the background only.
 ```
 
-**Angle definitions** (reused across all products):
-
-- **Front** — camera dead-on at eye level, straight front elevation, product centered and symmetrical.
-- **15° Left** — camera rotated **15° to the left** (gentle three-quarter left view); the product's front face and its **left side panel/gusset** are both visible.
-- **15° Right** — camera rotated **15° to the right** (gentle three-quarter right view); the product's front face and its **right side panel/gusset** are both visible.
+Negative prompt: the shared one above, plus `products cut off at the frame edge, products touching the frame edge, fisheye distortion`. If the generator garbles eight brand names, drop to 4 or 5 pouches.
 
 ---
 
-# 1 · Printed Films
+## Category covers
 
-*Films are shown as upright printed reels (roll standing on its end), with the brand label on the roll's core band — since these are converting processes, not consumer packs.*
+Shown on the `/products` overview cards.
 
-## 1.1 Rotogravure — `rotogravure`
-
-**Subject:** A tightly wound upright roll (reel) of glossy rotogravure-printed flexible packaging film standing on its end, the outer wrap showing crisp, high-resolution printed graphics in royal blue and red; smooth cardboard core.
-
-- **Front** — `An upright roll of glossy rotogravure-printed flexible packaging film standing on its end, high-resolution printed graphics in deep royal blue (#1e3c8b) and brand red (#e21e2e), a printed brand band on the roll reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, roll centered and symmetrical. Professional commercial product studio photograph, seamless pure-white backdrop with a soft floor gradient and subtle contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (gentle three-quarter left view), front face and left curve of the roll visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (gentle three-quarter right view), front face and right curve of the roll visible.`
-
-## 1.2 Flexography — `flexography`
-
-**Subject:** An upright roll of flexographic-printed flexible film with bold, high-impact repeat graphics in royal blue and red; slightly more graphic/pattern-forward than the rotogravure reel.
-
-- **Front** — `An upright roll of flexographic-printed flexible packaging film standing on its end, bold high-impact repeating graphics in deep royal blue (#1e3c8b) and brand red (#e21e2e), a printed brand band reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, roll centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view).`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view).`
+| File | Subject |
+|---|---|
+| `print-films-cover.webp` | Two large rolls of printed packaging film standing upright, one partly unrolled toward the camera, showing a repeating printed snack-wrapper design: the fictional brand "CRUNCHY CO" in bold white letters on a deep green background with copper-orange chip illustrations, repeated across the web with thin CMYK registration marks along the edge. |
+| `plastic-films-cover.webp` | A group of three plastic film rolls of different widths, one frosted white, one fully transparent, one metallized silver, arranged in a neat cluster with one film end unspooling. These are unprinted raw films, no artwork. |
+| `pouches-cover.webp` | An assortment of branded flexible pouches standing together with different fictional brands: a white stand-up pouch "NUTTY TRAIL", a kraft flat bottom pouch "MORNING ROAST" coffee, a silver spout pouch "FRESH PRESS" juice, and a green box pouch "LEAF & CUP" tea; varied heights, neatly grouped. |
 
 ---
 
-# 2 · Plastic Films
+## Printed Films
 
-## 2.1 Film Extrusion — `extrusion`
+### Rotogravure
+**File:** `rotogravure-front.webp`
+**Subject:** A roll of high-gloss printed packaging film with a long unrolled sheet draped toward the camera, showing a repeated photographic-quality print for a fictional tea brand "LEAF & CUP": rich photographic tea leaves and a steaming cup with smooth gradients on deep green, the brand name in elegant cream lettering, and a thin strip of CMYK registration color bars along one edge.
 
-**Subject:** An upright roll of freshly extruded, clear/translucent multi-layer plastic film with a natural glossy sheen; unprinted body with only a slim printed brand band on the core.
-
-- **Front** — `An upright roll of clear translucent freshly extruded multi-layer plastic film standing on its end, natural glossy sheen catching soft studio light, a slim printed brand band reading "ELEVATE" in red and "PACKAGING" in royal blue (#1e3c8b) with a CMYK swoosh accent on the core. Camera dead-on at eye level, straight front elevation, roll centered. Professional commercial product studio photograph, seamless pure-white backdrop, subtle contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view).`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view).`
-
-## 2.2 Holography — `holography`
-
-**Subject:** An upright roll of holographic film with a rainbow iridescent metallic sheen; the holographic diffraction pattern shimmers, over-laid with a royal-blue-and-red brand band.
-
-- **Front** — `An upright roll of holographic packaging film standing on its end, rainbow iridescent metallic diffraction sheen shimmering across the wrap, a printed brand band reading "ELEVATE" in red and "PACKAGING" in royal blue (#1e3c8b) with a CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, roll centered. Professional commercial product studio photograph, seamless pure-white backdrop, subtle contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), iridescence shifting across the roll.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), iridescence shifting across the roll.`
-
-## 2.3 Metallization — `metallization`
-
-**Subject:** An upright roll of mirror-finish silver vacuum-metallized film with a bright reflective chrome-like surface and a royal-blue-and-red printed brand band.
-
-- **Front** — `An upright roll of mirror-finish silver vacuum-metallized packaging film standing on its end, bright reflective chrome-like surface, a printed brand band reading "ELEVATE" in red and "PACKAGING" in royal blue (#1e3c8b) with a CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, roll centered. Professional commercial product studio photograph, seamless pure-white backdrop, subtle contact shadow, diffused three-point studio lighting, controlled reflections, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view).`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view).`
+### Flexography
+**File:** `flexography-front.webp`
+**Subject:** A roll of matte printed packaging film with a sheet unrolled flat toward the camera, showing a repeated bold flat-color print for a fictional bakery brand "DAILY BAKE": simple two-color bread illustrations in warm orange and forest green on off-white, the brand name in a chunky rounded font, and a thin strip of CMYK registration marks along the edge.
 
 ---
 
-# 3 · Pouches
+## Plastic Films
 
-*All pouches are printed flexible packaging with a matte/gloss finish, in the royal-blue-and-red brand palette, carrying the Elevate label. Each is shown filled and standing (unless the format is a flat bag).*
+These are raw substrates, so they stay unprinted (no branding needed).
 
-## 3.1 4D Pouch — `4d-pouch`
+### Film Extrusion
+**File:** `extrusion-front.webp`
+**Subject:** Two large rolls of clear multi-layer plastic film on cardboard cores, one standing and one lying on its side with a length of glossy transparent film unspooled across the floor, showing its clarity and slight sheen. No printing.
 
-**Subject:** A premium 4D pouch — a structurally distinctive stand-up pouch with a crisp three-dimensional faceted body and sharp defined edges, a high-end reclosable zipper at the top.
+### Holography
+**File:** `holography-front.webp`
+**Subject:** A roll of holographic film with a sheet unrolled toward the camera, the surface shimmering with iridescent rainbow light-diffraction patterns (silver base shifting through cyan, magenta and gold), with a subtle repeating star motif in the hologram. No text.
 
-- **Front** — `A premium 4D stand-up flexible packaging pouch with a distinctive faceted three-dimensional body and crisp defined edges, resealable zipper at top, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered and standing upright. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front face and left facet visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front face and right facet visible.`
-
-## 3.2 Centre Seal — `centre-seal-pouch`
-
-**Subject:** A classic flat pillow bag (centre back-seam seal), lying/standing flat with a smooth front face and a tear notch at the top.
-
-- **Front** — `A classic flat pillow-style flexible packaging bag with a centre back-seam seal, smooth flat front face, tear notch at the top, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, bag centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view).`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view).`
-
-## 3.3 Centre Seal Gusset — `centre-seal-gusset-pouch`
-
-**Subject:** A centre-seal pillow bag with visible side gussets adding fill volume, standing with a rounded filled body.
-
-- **Front** — `A centre-seal flexible packaging pillow bag with visible side gussets adding fill volume, rounded filled body, tear notch, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, bag centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), left side gusset clearly visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), right side gusset clearly visible.`
-
-## 3.4 Flat Bottom Pouch — `flat-bottom-pouch`
-
-**Subject:** A premium flat-bottom (box-bottom) coffee-style pouch standing square on shelf, with side gussets, a flat square base, and a top zipper — the classic specialty-coffee silhouette.
-
-- **Front** — `A premium flat-bottom (box-bottom) stand-up coffee-style flexible pouch standing square on its flat base, side gussets, resealable zipper at top, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered and standing upright. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front face and left gusset panel visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front face and right gusset panel visible.`
-
-## 3.5 Box Pouch — `box-pouch`
-
-**Subject:** A rigid box-style pouch with a crisp square base, structured flat side panels and sharp box edges — a premium structured brick shape, with an optional top zipper.
-
-- **Front** — `A rigid box-style flexible packaging pouch with a crisp square base, structured flat side panels and sharp box edges, resealable zipper at top, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front face and left box panel visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front face and right box panel visible.`
-
-## 3.6 Four Side Seal — `four-side-seal-pouch`
-
-**Subject:** A large heavy-duty side-gusseted sack-style pouch (holds up to 20 kg), tall and robust, with a carry handle at the top and a square-ish bottom — an industrial retail sack.
-
-- **Front** — `A large heavy-duty side-gusseted sack-style flexible packaging pouch, tall and robust for bulk product, a reinforced carry handle at the top, four-panel construction, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, sack centered and standing. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front face and left side gusset panel visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front face and right side gusset panel visible.`
-
-## 3.7 Book Shape Pouch — `book-shape-pouch`
-
-**Subject:** A slim book-style pouch that folds like a book — flat front and back panels with a defined flat spine down one side — a refined, elegant silhouette.
-
-- **Front** — `A slim book-shape flexible packaging pouch that folds like a book, flat front and back panels with a defined flat spine, refined elegant silhouette, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front panel and flat spine visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front panel and right edge visible.`
-
-## 3.8 Standup Pouch — `stand-up-pouch`
-
-**Subject:** A classic self-supporting stand-up pouch with a bottom gusset, rounded top corners and a resealable zipper — the everyday retail pouch silhouette.
-
-- **Front** — `A classic self-supporting stand-up flexible packaging pouch with a bottom gusset, rounded top corners, resealable zipper, tear notch, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered and standing upright. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front face and left edge visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front face and right edge visible.`
-
-## 3.9 Spout/Nozzle Pouch — `spout-nozzle-pouch`
-
-**Subject:** A stand-up pouch with a moulded plastic dispensing spout and screw cap at the top corner — a liquid/refill pack.
-
-- **Front** — `A stand-up flexible packaging pouch with a moulded plastic dispensing spout and screw cap at the top corner, filled rounded body for liquids, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered and standing upright, spout clearly visible. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), spout and left edge visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), spout and right edge visible.`
-
-## 3.10 Shaped/Die-Cut Pouch — `shaped-die-cut-pouch`
-
-**Subject:** A custom die-cut pouch whose outline follows a product silhouette (e.g. a soft rounded/contoured shape rather than a rectangle), a hang hole at the top, standing or hanging.
-
-- **Front** — `A custom die-cut shaped flexible packaging pouch with a contoured non-rectangular silhouette following a product shape, rounded custom outline, hang hole at the top, matte finish in deep royal blue (#1e3c8b) and brand red (#e21e2e), a clean brand label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), custom edge profile visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), custom edge profile visible.`
-
-## 3.11 Kraft Paper Bread Pouch — `kraft-paper-bread-pouch`
-
-**Subject:** A natural kraft-paper bread bag with a clear rectangular bread window on the front, a folded top with closure — natural kraft brown body accented with the royal-blue-and-red brand label. *(Note: matt kraft finish; blue/red appears in the printed label and accents rather than the whole body.)*
-
-- **Front** — `A natural kraft-paper bread pouch, matte brown kraft body with a clear rectangular transparent bread window on the front, folded top with a closure, brand accents and label in deep royal blue (#1e3c8b) and brand red (#e21e2e), the label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered and standing. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), front window and left side visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), front window and right side visible.`
-
-## 3.12 Textile Slider Pouch — `textile-slider-pouch`
-
-**Subject:** A premium reclosable slider-zip pouch for garments — a large flat pouch with a smooth plastic slider zip along the top, a clear/frosted presentation front panel and a hang hole.
-
-- **Front** — `A premium reclosable slider-zip flexible packaging pouch for garments, large flat format with a smooth plastic slider zip along the top edge, a clear frosted presentation front panel, hang hole, brand accents and label in deep royal blue (#1e3c8b) and brand red (#e21e2e), the label reading "ELEVATE" in red and "PACKAGING" in royal blue with a small CMYK swoosh accent. Camera dead-on at eye level, straight front elevation, pouch centered. Professional commercial product studio photograph, seamless pure-white backdrop, soft contact shadow, diffused three-point studio lighting, ultra-sharp, photorealistic, 8k, 85mm f8.`
-- **15° Left** — same subject and style, `camera rotated 15° to the left (three-quarter left view), slider zip and left edge visible.`
-- **15° Right** — same subject and style, `camera rotated 15° to the right (three-quarter right view), slider zip and right edge visible.`
+### Metallization
+**File:** `metallization-front.webp`
+**Subject:** A roll of mirror-bright metallized silver film with a smooth sheet unrolled toward the camera, reflecting soft studio light, clean chrome-like finish with gentle reflections. No printing.
 
 ---
 
-## Quick index (17 products → 51 images)
+## Pouches
 
-| # | Product | Slug | Category |
-|---|---------|------|----------|
-| 1 | Rotogravure | `rotogravure` | Printed Films |
-| 2 | Flexography | `flexography` | Printed Films |
-| 3 | Film Extrusion | `extrusion` | Plastic Films |
-| 4 | Holography | `holography` | Plastic Films |
-| 5 | Metallization | `metallization` | Plastic Films |
-| 6 | 4D Pouch | `4d-pouch` | Pouches |
-| 7 | Centre Seal | `centre-seal-pouch` | Pouches |
-| 8 | Centre Seal Gusset | `centre-seal-gusset-pouch` | Pouches |
-| 9 | Flat Bottom Pouch | `flat-bottom-pouch` | Pouches |
-| 10 | Box Pouch | `box-pouch` | Pouches |
-| 11 | Four Side Seal | `four-side-seal-pouch` | Pouches |
-| 12 | Book Shape Pouch | `book-shape-pouch` | Pouches |
-| 13 | Standup Pouch | `stand-up-pouch` | Pouches |
-| 14 | Spout/Nozzle Pouch | `spout-nozzle-pouch` | Pouches |
-| 15 | Shaped/Die-Cut Pouch | `shaped-die-cut-pouch` | Pouches |
-| 16 | Kraft Paper Bread Pouch | `kraft-paper-bread-pouch` | Pouches |
-| 17 | Textile Slider Pouch | `textile-slider-pouch` | Pouches |
+### 4D Pouch
+**Files:** `4d-pouch-front.webp`, `4d-pouch-left.webp`, `4d-pouch-right.webp`, `4d-pouch-back.webp`
+**Subject:** A premium 4D pouch for a fictional specialty coffee brand "SUMMIT BEANS": rigid box-like flexible pouch with four crisp vertical corner seals, square flat base and press-to-close zipper; matte deep-green film with a minimalist copper mountain-line illustration and the brand name in thin gold capitals.
 
-**Total: 17 products × 3 angles = 51 images.**
+### Centre Seal
+**File:** `centre-seal-pouch-front.webp`
+**Subject:** A filled pillow-style centre seal snack bag for a fictional chips brand "CRUNCHY CO": crimped top and bottom seals, gently puffed; glossy deep-green film with bright illustrated potato chips and the brand name in bold white rounded letters. Front-facing.
+
+### Centre Seal Gusset
+**Files:** `centre-seal-gusset-pouch-front.webp`, `centre-seal-gusset-pouch-left.webp`, `centre-seal-gusset-pouch-right.webp`
+**Subject:** A filled centre-seal gusseted bag for a fictional flour brand "GOLDEN MILL", standing upright with folded side gussets and a crimped top seal; matte cream film with a wheat-stalk illustration in warm gold and the brand name in dark brown serif letters.
+
+### Flat Bottom Pouch
+**Files:** `flat-bottom-pouch-front.webp`, `flat-bottom-pouch-left.webp`, `flat-bottom-pouch-right.webp`
+**Subject:** A flat bottom coffee pouch for a fictional brand "MORNING ROAST": tall square shape with flat rectangular base, crisp side gussets and pull-tab zipper; matte black soft-touch film with a copper sunrise line illustration and the brand name in clean white capitals.
+
+### Box Pouch
+**Files:** `box-pouch-front.webp`, `box-pouch-left.webp`, `box-pouch-right.webp`
+**Subject:** A box pouch for a fictional tea brand "LEAF & CUP": square footprint, sharp vertical edges and flat top, structured and rigid-looking; matte sage-green film with delicate botanical tea-leaf line art and the brand name in elegant cream lettering.
+
+### Four Side Seal
+**Files:** `four-side-seal-pouch-front.webp`, `four-side-seal-pouch-left.webp`, `four-side-seal-pouch-right.webp`
+**Subject:** A large heavy-duty four-side-seal bag for a fictional rice brand "HARVEST GRAIN", filled so it stands full and solid, sealed seams on all four edges, side gussets and a handle cut-out at the top; sized like a 10 to 20 kg sack; white matte film with a green rice-paddy illustration and the brand name in bold dark-green letters.
+
+### Book Shape Pouch
+**Files:** `book-shape-pouch-front.webp`, `book-shape-pouch-left.webp`, `book-shape-pouch-right.webp`
+**Subject:** A slim book-shape pouch for a fictional chocolate brand "COCOA LANE", standing upright like a hardcover book with flat front, back and narrow spine panels; matte chocolate-brown film with copper foil-look accents, a simple cocoa-pod illustration and the brand name in gold script.
+
+### Standup Pouch
+**Files:** `stand-up-pouch-front.webp`, `stand-up-pouch-left.webp`, `stand-up-pouch-right.webp`
+**Subject:** A classic stand-up pouch (doypack) for a fictional trail-mix brand "NUTTY TRAIL", standing on its rounded bottom gusset with a resealable zipper and tear notch; glossy white film with colorful illustrated nuts and dried fruit and the brand name in playful orange lettering.
+
+### Spout/Nozzle Pouch
+**File:** `spout-nozzle-pouch-front.webp`
+**Subject:** A filled stand-up spout pouch for a fictional juice brand "FRESH PRESS", with a corner-mounted spout and white screw cap; glossy film with a bright orange-and-green fruit splash illustration and the brand name in bold white letters.
+
+### Shaped/Die-Cut Pouch
+**Files:** `shaped-die-cut-pouch-1.webp` to `shaped-die-cut-pouch-4.webp` (one per file)
+**Subject:** A die-cut flexible pouch with a custom silhouette, standing upright, smooth sealed edges following the outline. Use one design per file:
+1. bottle silhouette with a narrow neck, fictional shampoo brand "PURE BLOOM", matte green with white floral line art
+2. rounded hourglass silhouette, fictional candy brand "SUGAR POP", glossy white with pastel candy illustrations
+3. curved-shoulder silhouette with a small top spout, fictional baby food brand "LITTLE SPOON", soft yellow with simple fruit icons
+4. rounded rectangle with a hang-hole, fictional pet treat brand "HAPPY PAWS", matte copper with a cartoon paw print (no real characters)
+
+### Kraft Paper Bread Pouch
+**Files:** `kraft-paper-bread-pouch-cover.webp`, `kraft-paper-bread-pouch-front.webp`
+**Subject:** A brown kraft paper bread bag for a fictional bakery "DAILY BAKE", with a long clear rectangular window showing a sliced loaf inside and a folded top; simple one-color dark-green print of a wheat icon and the brand name in a rustic stamp-style font. For the cover file, show two of these bags side by side, one slightly behind the other.
+
+### Kraft Paper Pouch
+**Files:** `kraft-paper-pouch-front.webp`, `kraft-paper-pouch-front-2.webp`
+**Subject:** A natural brown kraft paper stand-up pouch for a fictional granola brand "WILD OATS", with resealable zipper and tear notch, visible paper fiber texture, simple one-color black print of an oat-sprig illustration and the brand name in a clean hand-drawn font. For `front-2`, add a small clear oval window showing granola inside.
+
+### Textile Slider Pouch
+**Files:** `textile-slider-pouch-front.webp`, `textile-slider-pouch-02.webp`
+**Subject:** A clear plastic slider-zip pouch for a fictional home-textile brand "SOFT NEST", lying at a slight angle and containing a neatly folded plain white cotton towel; fully transparent front with a small printed band across the top showing the brand name in navy lettering and a simple feather icon. For `02`, show the same pouch standing upright at a three-quarter angle.
